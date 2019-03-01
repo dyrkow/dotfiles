@@ -33,3 +33,24 @@ Use command `reset.sh`
 * `tmux` - terminal multiplexer
 * `npm & node` - NodeJS
 * `yarn` - package manager for node
+
+### Files
+#### Shell
+* `.bash_profile`
+
+#### Git
+* `.gitconfig`
+* `.gitignore`
+
+#### VIM
+* `init.vim` - nvim config
+
+#### Tempopary part
+brew install nvim
+
+// install plug manager
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    
+cd ~/.config & makedir nvim & cd nvim & touch init.vim
+vim ~/.config/nvim/init.vim
