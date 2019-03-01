@@ -28,8 +28,8 @@ Use command `reset.sh`
 
 ### Utiliteas
 
-`brew` - OS package manager
-`git` - CVS system
-`tmux` - terminal multiplexer
-`npm & node` - NodeJS
-`yarn` - package manager for node
+* `brew` - OS package manager
+* `git` - CVS system
+* `tmux` - terminal multiplexer
+* `npm & node` - NodeJS
+* `yarn` - package manager for node
