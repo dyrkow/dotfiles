@@ -54,3 +54,10 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     
 cd ~/.config & makedir nvim & cd nvim & touch init.vim
 vim ~/.config/nvim/init.vim
+
+## Tmux
+
+`Ctrl+a+s` - show attached settions
+`tmux attach -t <number settion>` - go to session
+`tmux ls` - show all sessions
+`tmux detach` - detach session - `Ctrl+a+d`
