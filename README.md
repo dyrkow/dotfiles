@@ -58,6 +58,9 @@ vim ~/.config/nvim/init.vim
 ## Tmux
 
 `Ctrl+a+s` - show attached settions
+
 `tmux attach -t <number settion>` - go to session
+
 `tmux ls` - show all sessions
+
 `tmux detach` - detach session - `Ctrl+a+d`
