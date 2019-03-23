@@ -64,3 +64,7 @@ vim ~/.config/nvim/init.vim
 `tmux ls` - show all sessions
 
 `tmux detach` - detach session - `Ctrl+a+d`
+
+
+### General -> command (start tmux on start your terminal)
+tmux attach -t base || tmux new -s base
