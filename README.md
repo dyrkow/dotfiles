@@ -2,6 +2,7 @@
 
 ## Requirements
 * MacOS Mojave
+* Brew
 
 ## Setup
 1. Clone this repo
@@ -57,7 +58,7 @@ vim ~/.config/nvim/init.vim
 
 ## Tmux
 
-`Ctrl+a+s` - show attached settions
+<kbd>Ctrl</kbd>+<kbd>a</kbd>+<kbd>s</kbd> - show attached settions
 
 `tmux attach -t <number settion>` - go to session
 
@@ -67,7 +68,7 @@ vim ~/.config/nvim/init.vim
 
 `tmux ls` - show all sessions
 
-`tmux detach` - detach session - `Ctrl+a+d`
+`tmux detach` - detach session - <kbd>Ctrl</kbd>+<kbd>a</kbd>+<kbd>d</kbd>
 
 
 ### General -> command (start tmux on start your terminal)
