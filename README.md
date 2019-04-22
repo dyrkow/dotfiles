@@ -1,4 +1,4 @@
-# My personal dotfiles
+# Dotfiles
 
 ## Requirements
 * MacOS Mojave
@@ -60,6 +60,10 @@ vim ~/.config/nvim/init.vim
 `Ctrl+a+s` - show attached settions
 
 `tmux attach -t <number settion>` - go to session
+
+`tmux kill-session -t <session name>` - kill named session
+
+`tmux new -s <session name>` - create named session
 
 `tmux ls` - show all sessions
 
