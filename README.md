@@ -73,3 +73,7 @@ vim ~/.config/nvim/init.vim
 
 ### General -> command (start tmux on start your terminal)
 tmux attach -t base || tmux new -s base
+
+
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+brew install zsh-syntax-highlighting
