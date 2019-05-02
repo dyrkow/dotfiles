@@ -1,4 +1,5 @@
 # Dotfiles
+This repo contain my environment
 
 ## Requirements
 * MacOS Mojave
