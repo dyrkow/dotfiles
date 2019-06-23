@@ -6,7 +6,7 @@ This repo contain my environment
 * Brew
 
 ## Setup
-1. Clone this repo
+1. Clone this repo to user root (like this `~/dotfiles`)
 2. Use command `install.sh`
 
 ## Reset
