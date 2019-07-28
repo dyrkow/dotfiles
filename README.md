@@ -78,3 +78,10 @@ tmux attach -t base || tmux new -s base
 
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 brew install zsh-syntax-highlighting
+
+### npm
+Install globally
+
+- fixjson
+- eslint
+- prettier
