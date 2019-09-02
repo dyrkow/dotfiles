@@ -85,3 +85,8 @@ Install globally
 - fixjson
 - eslint
 - prettier
+
+
+## Users on windows
+
+`git config core.autocrlf false` - используем конец строки Linux
