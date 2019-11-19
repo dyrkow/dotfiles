@@ -1,0 +1,13 @@
+--ignore-dir=build
+--ignore-dir=tmp
+--ignore-dir=vendor
+--ignore-dir=.idea
+--ignore-dir=.idea
+--ignore-file=is:.tags
+--ignore-dir=public/assets
+--ignore-file=is:.keep
+--ignore-file=is:yarn.lock
+--ignore-file=is:package-json.lock
+--ignore-file=is:.gitignore
+--ignore-dir=nbproject
+--color
