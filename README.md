@@ -90,3 +90,10 @@ Install globally
 ## Users on windows
 
 `git config core.autocrlf false` - используем конец строки Linux
+
+
+VIM Performance
+```
+nvim --startuptime start.log package.json
+```
+
