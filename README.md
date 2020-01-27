@@ -86,6 +86,7 @@ Install globally
 - eslint
 - prettier
 
+npm install --global speed-test
 
 ## Users on windows
 
