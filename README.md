@@ -98,3 +98,7 @@ VIM Performance
 nvim --startuptime start.log package.json
 ```
 
+insalll vim file manager from brew
+```
+brew install vifm
+```
