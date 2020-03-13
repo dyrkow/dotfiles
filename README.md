@@ -111,8 +111,11 @@ brew install vifm
 install gpg for secure data and sign github commits
 
 ```
-brew install gnupg
+brew install gnupg2
 ```
+
+(support util for enter passphrase `brew install pinentry-mac`)
+(install GPG Suite for enter passphrase only one https://gpgtools.org/)
 
 up gpg infrastructure, output example
 ```
@@ -122,3 +125,4 @@ gpg: /Users/user/.gnupg/trustdb.gpg: создана таблица довери�
 ```
 
 if you see error when `gpg --gen-key` just use `rm -rf ~/.gnupg`
+`gpg --full-generate-key`
