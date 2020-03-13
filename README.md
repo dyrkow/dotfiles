@@ -98,7 +98,27 @@ VIM Performance
 nvim --startuptime start.log package.json
 ```
 
+install homebrew
+
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 insalll vim file manager from brew
 ```
 brew install vifm
 ```
+
+install gpg for secure data and sign github commits
+
+```
+brew install gnupg
+```
+
+up gpg infrastructure, output example
+```
+gpg: создан каталог '/Users/user/.gnupg'
+gpg: создан щит с ключами '/Users/user/.gnupg/pubring.kbx'
+gpg: /Users/user/.gnupg/trustdb.gpg: создана таблица доверия
+```
+
+if you see error when `gpg --gen-key` just use `rm -rf ~/.gnupg`
