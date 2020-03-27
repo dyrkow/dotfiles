@@ -69,7 +69,11 @@ vim ~/.config/nvim/init.vim
 
 `tmux ls` - show all sessions
 
+`tmux a` - attach last session
 `tmux detach` - detach session - <kbd>Ctrl</kbd>+<kbd>a</kbd>+<kbd>d</kbd>
+
+<kbd>Ctrl</kbd>+<kbd>a</kbd>+<kbd>$</kbd> - rename current session
+
 
 
 ### General -> command (start tmux on start your terminal)
