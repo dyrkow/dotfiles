@@ -130,3 +130,7 @@ gpg: /Users/user/.gnupg/trustdb.gpg: создана таблица довери�
 
 if you see error when `gpg --gen-key` just use `rm -rf ~/.gnupg`
 `gpg --full-generate-key`
+
+
+
+`yarn add react-devtools` - devtools for debuge view in RN
