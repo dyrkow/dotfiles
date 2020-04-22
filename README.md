@@ -134,3 +134,10 @@ if you see error when `gpg --gen-key` just use `rm -rf ~/.gnupg`
 
 
 `yarn add react-devtools` - devtools for debuge view in RN
+
+
+
+Если есть разные проекты, которые работают с разными версиями nodejs
+Установить nvm
+Добавить в каждый проект .nvmrc с вервией ноды которую использует проект v10.0.0
+При заходе в проект выполнить nvm install & nvm use
