@@ -141,3 +141,7 @@ if you see error when `gpg --gen-key` just use `rm -rf ~/.gnupg`
 Установить nvm
 Добавить в каждый проект .nvmrc с вервией ноды которую использует проект v10.0.0
 При заходе в проект выполнить nvm install & nvm use
+
+
+
+`open -a Simulator` - открыть симулятор IOS
