@@ -151,3 +151,6 @@ if you see error when `gpg --gen-key` just use `rm -rf ~/.gnupg`
 Когда подключаются репозитории приватно напрямую в package.json можно у этого пакета определить скрипт prepare с помощью которого пакет будет собран
 Это избавляет нас от момента хранения собранной версии в git 
 https://blog.jim-nielsen.com/2018/installing-and-building-an-npm-package-from-github/
+
+Поднять эмулятор андроид
+`emulator -avd avd_name`
