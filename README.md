@@ -154,3 +154,5 @@ https://blog.jim-nielsen.com/2018/installing-and-building-an-npm-package-from-gi
 
 Поднять эмулятор андроид
 `emulator -avd avd_name`
+
+Собрать bundle(aap) файл android приложения ./gradlew bundleRelease
