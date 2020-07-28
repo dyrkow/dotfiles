@@ -156,3 +156,19 @@ https://blog.jim-nielsen.com/2018/installing-and-building-an-npm-package-from-gi
 `emulator -avd avd_name`
 
 Собрать bundle(aap) файл android приложения ./gradlew bundleRelease
+
+
+Verifyed commits on github
+1. Generate key https://docs.github.com/en/github/authenticating-to-github/generating-a-new-gpg-key
+List of keys `gpg --list-secret-keys --keyid-format LONG`
+2. Change .gitconfig file
+```diff
+[user]
+	name = Dyrkov Andrey
+	email = webworkdeveloper@gmail.com
++	signingkey = XXXXXXXXXXXXXXXX
++[commit]
++	gpgsign = true
++[gpg]
++	program = gpg2
+```
