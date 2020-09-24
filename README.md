@@ -174,3 +174,5 @@ List of keys `gpg --list-secret-keys --keyid-format LONG`
 ```
 
 vim, show path to the current file 1+ctrl+g
+
+`brew install gh` - utility for working with github, open PR, close, merge and t.c.
