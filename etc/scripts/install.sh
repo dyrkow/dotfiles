@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Variables
-version='1.0.0'
-name='dotfiles'
-pwdCommand=$(pwd)
+# This script install all environment apps if needed
 
-#Math operations
-size=$(( 1 + 2 ))
+# Install
+./install_brew.sh
+./install_emacs.sh
+./install_clisp.sh
+
 
 # Numbers
 # -eq равно
@@ -36,18 +36,3 @@ size=$(( 1 + 2 ))
 # file1 -ot file2 Проверяет, старше ли file1, чем file2.
 # -O file Проверяет, существует ли файл, и является ли его владельцем текущий пользователь.
 # -G file Проверяет, существует ли файл, и соответствует ли его идентификатор группы идентификатору группы текущего пользователя.
-
-if [ $size -gt 4 ]
-then
-    echo 'Size over limit. Installation stopped!'
-else 
-    # Installation
-    echo 'Start installing...'
-    echo ┌─────────────────┐
-    echo '│ name:' $name ' │'
-    echo '│ version:' $version ' │'
-    echo '│ size:' $size '        │'
-    echo '└─────────────────┘'
-    echo 'Installed on ' $pwdCommand
-fi
-

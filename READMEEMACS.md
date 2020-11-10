@@ -3,6 +3,11 @@
 весь код кастомизации необходимо помезать в папку ~/.emacs.d в файл init.el
 Чтобы применить изменения, просто  перезапускаем  emacs 
 
+## Сборка в байт-код для лучшей производительности
+
+1.  Установить лисп на машину 'brew install clisp'
+clis - скомпилить
+
 ## Установка emacs на мак
 
 brew install emacs
@@ -68,3 +73,17 @@ C-x Left - previous-buffer
 C-x Right - next-buffer
 
 
+
+# Lisp
+
+# Setup
+1. Install on common lisp compiler on your device `brew install clisp`
+
+# Run code on clisp
+
+- Interpreter - `clisp` and load file `(load "file.lisp")`
+- Compile - `clip` and compile `(compile-file "file.lisp")` ~> file.fas next `(load "file.fas")`
+
+# Exit from clisp
+
+Just run `(quit)`
