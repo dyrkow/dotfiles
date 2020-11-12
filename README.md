@@ -1,6 +1,8 @@
 # Dotfiles
 This repo contain my environment
 
+## TODO: не писать скрипты, юзаем вот это дело https://www.ansible.com/
+
 ## Requirements
 * MacOS Mojave
 * Brew
