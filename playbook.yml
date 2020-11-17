@@ -1,0 +1,6 @@
+- name: "Dyrkov environment playbook"
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Say hello
+    command: echo "hello"
