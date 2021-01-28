@@ -183,3 +183,6 @@ vim, show path to the current file 1+ctrl+g
 
 Android sdk tools, sdkmanager, чтобы не устанавливать Android Studio
 https://developer.android.com/studio/index.html#downloads
+
+Поставить Java8
+ `brew install openjdk@8`
