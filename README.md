@@ -187,3 +187,7 @@ https://developer.android.com/studio/index.html#downloads
 Поставить Java8
  `brew install openjdk@8`
 `sudo ln -sfn /usr/local/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk`
+
+
+Утилита мониторинга стоимости валюты
+`brew install cointop`
