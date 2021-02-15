@@ -1,15 +1,26 @@
 # Ansible 
 
+## Dependencies
+
+```
+brew install git
+```
+
+## Installation
+
 ```
 brew install ansible
 ```
 
 ## Configuration
 
-Файл конфигурации `./ansible.cfg`
+Файл конфигурации `~/ansible.cfg`
 
 В нем мы можем использовать дерективы
 ```
+inventory = ~/ansible/hosts
+host_key_checking = false
+
 hostfile:./inventory - путь до инвентори файла
 sudo_user: - пользователь, за которого на удаленных серверах все будет происходить
 remote_port: — порт для подключения по протоколу SSH
