@@ -1,6 +1,15 @@
 #!/bin/bash
 
 # This script install all environment apps if needed
+1. Install brew by command
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+2. Install ansible by command
+```
+brew install ansible
+```
+3. Run ansible scripts for setup environment
 
 # Install
 ./install_brew.sh
