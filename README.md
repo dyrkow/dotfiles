@@ -1,14 +1,13 @@
 # Dotfiles
 
 ## Setup
-1. Install [brew](https://brew.sh/)
-2. Clone this repo
+1. Clone this repo
 
 ```
 git clone https://github.com/WebWorkDeveloper/dotfiles.git
 ```
 
-2. Run install script from repo
+2. Run install script from repo in `terminal`
 ```
 ./install.sh
 ```
