@@ -1,4 +1,48 @@
 # Dotfiles
+
+## Setup
+1. Clone this repo
+
+```
+https://github.com/WebWorkDeveloper/dotfiles.git
+```
+
+2. Run install script
+```
+./install.sh
+```
+
+
+
+</br></br></br></br></br></br></br></br></br></br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Dotfiles
 This repo contain my environment
 
 ## TODO: не писать скрипты, юзаем вот это дело https://www.ansible.com/
