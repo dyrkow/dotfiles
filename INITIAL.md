@@ -5,13 +5,18 @@
 4. `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 
 
+```
+alias gap="git add -p"
+alias ga="git add"
+alias gl="git pull"
+alias gp="git push"
+alias gs="git status"
+alias gpf="git push --force"
+alias grh="git reset --hard"
+```
 
 alias ls='ls -1a'
 alias tap='adb shell input keyevent 82'
-
-alias gs='git status'
-alias gp='git pull'
-alias gh='git push'
 
 alias vimconfig='vim ~/.config/nvim/init.vim'
 alias zshconfig="vim ~/.zshrc"
