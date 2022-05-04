@@ -15,6 +15,8 @@ alias gpf="git push --force"
 alias grh="git reset --hard"
 ```
 
+5. `brew install git`
+
 alias ls='ls -1a'
 alias tap='adb shell input keyevent 82'
 
