@@ -16,6 +16,10 @@ alias grh="git reset --hard"
 ```
 
 5. `brew install git`
+6.
+```
+
+```
 
 alias ls='ls -1a'
 alias tap='adb shell input keyevent 82'
