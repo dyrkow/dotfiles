@@ -23,3 +23,4 @@ alias tap='adb shell input keyevent 82'
 
 5. `brew install git`
 6. `brew install neovim`
+7. Install powerlevel10k. `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
