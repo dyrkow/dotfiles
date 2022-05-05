@@ -26,3 +26,4 @@ alias tap='adb shell input keyevent 82'
 7. Install powerlevel10k. `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
 8. `brew install tmux`
 9. Tmux plugin manager `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+10. `git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack`
