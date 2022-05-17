@@ -14,7 +14,7 @@ else
         then
             echo "Brew not installed!"
             exit 1
-        else 
+        else
             echo "Brew installation finished!"
         fi
 fi

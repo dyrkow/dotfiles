@@ -11,31 +11,28 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim'
-Plug 'mattn/emmet-vim', { 'for': ['html','php'] }
+Plug 'mattn/emmet-vim', { 'for': ['php', 'html']}
 Plug 'mileszs/ack.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'w0rp/ale'
+Plug 'liuchengxu/vim-clap'
 Plug 'wellle/targets.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-
-" Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'fszymanski/deoplete-emoji' " Type :<emojji name> when commit changes
-
-
-" Plug 'ludovicchabant/vim-gutentags'
-" Plug 'ternjs/tern_for_vim'
 
 " Interface
 Plug 'ap/vim-css-color', { 'for': ['css', 'scss', 'sass', 'stylus']}
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'yggdroot/indentline'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
 
 " Git
 Plug 'airblade/vim-gitgutter'
@@ -43,16 +40,25 @@ Plug 'tpope/vim-fugitive'
 Plug 'tsony-tsonev/nerdtree-git-plugin'
 
 " Syntax support
-Plug 'sheerun/vim-polyglot'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'sheerun/vim-polyglot'
+" Plug 'othree/jsdoc-syntax.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'herringtondarkholme/yats.vim'
+Plug 'yardnsm/vim-import-cost', { 'do': 'yarn' }
 
 " Color theme
-Plug 'vim-airline/vim-airline-themes'
 Plug 'cocopon/iceberg.vim'
+Plug 'vim-airline/vim-airline-themes'
+
+
+Plug 'arzg/vim-substrata'
 
 call plug#end()
-
 
 "----------"
 "   BASE   "
@@ -61,14 +67,25 @@ call plug#end()
 let mapleader = "\<Space>"
 
 colorscheme iceberg
-set guifont =Cousine\ Nerd\ Font\ Mono:h12
+" colorscheme substrata
+
+" set guifont =Cousine\ Nerd\ Font\ Mono:h12
+" set guifont =Anonymous\ Pro:h12
+set guifont =Anonymice\ Nerd\ Font\ Complete\ Mono:h12
+
+" Show normal colors on terminal
+if (has('termguicolors'))
+  set termguicolors
+endif
 
 syntax on
 
 filetype plugin indent on
 highlight ColorColumn ctermbg=darkgray
 
+set background=dark
 set autoindent
+set cursorline
 set clipboard=unnamed
 set colorcolumn=100
 set cursorline
@@ -77,12 +94,14 @@ set expandtab
 set history=500
 set ic
 set ignorecase
+set lazyredraw
 set linespace=3
 set list
 set listchars=tab:‣\ ,trail:•,precedes:«,extends:»
 set mousehide
 set nobackup
 set noerrorbells
+set nowritebackup
 set nohlsearch
 set noswapfile
 set nowrap
@@ -96,22 +115,21 @@ set splitbelow
 set splitright
 set tabstop=4
 set ttyfast
-set lazyredraw
 set visualbell
 
-set foldmethod=indent   
+set foldlevel=1
+set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
-set foldlevel=1
 
-set hidden " for coc
-set updatetime=300 " coc
+" For coc plugin
+set hidden
+set updatetime=300
 
-set nospell
-" set spell spelllang=en_us
-" set spellsuggest=5
+set spell
+set spelllang=ru_ru,en_us
 
-" Copy&Paste to&from clipboard
+" Copy/Paste to and from clipboard
 set clipboard+=unnamedplus
 
 " Large file performance
@@ -135,7 +153,7 @@ nmap gi <plug>(quickr_preview_qf_close)
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'md', 'markdown']
 
 " NERDTree
-map <C-t> :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeToggle<CR>
 
 " Navigate between buffers
 map <C-k> <C-w><Up>
@@ -143,7 +161,7 @@ map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
-" Easy motion
+" Easy motion plugin
 " <Leader>f{char} to move to {char}
 map  <Leader>c <Plug>(easymotion-bd-f)
 nmap <Leader>c <Plug>(easymotion-overwin-f)
@@ -211,6 +229,7 @@ autocmd BufWritePost * GitGutter
 " Airline
 let g:airline_theme='minimalist'
 
+
 " Buffergator
 let g:buffergator_window_statusline = 1
 let g:buffergator_sort_regime = "mru"
@@ -225,7 +244,7 @@ let g:AutoPairsShortcutFastWrap = '<C-e>'
 let g:user_emmet_leader_key='<Tab>'
 
 " CTRLP
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|dist|build|vendor|assets|coverage)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|dist|build|vendor|assets|coverage|__snapshots__)|(\.(swp|ico|git|svn))$'
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_map = '<Leader>f'
 let g:ctrlp_cmd = 'CtrlP'
@@ -257,17 +276,15 @@ let g:NERDTreeColorMapCustom = {
     \ }
 
 " ALE
-" 1. Install eslint in project - npm i -D eslint prettier
-" 2. npm i -D eslint-plugin-prettier eslint-config-prettier
-" 3. lint and use standart option
+" 1. eslint --init
 " let g:ale_lint_on_text_changed = 'never' "check when save file
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '●'
 let g:ale_statusline_format=['X %d', '? %d', '']
-let g:ale_echo_msg_format = '%linter% says %s'
-let g:ale_linters = {'javascript': ['eslint']}
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'json': ['fixjson']}
+let g:ale_echo_msg_format = '%linter%: %s'
+let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['eslint'], 'typescriptreact': ['eslint'] }
+let g:ale_fixers = { 'html': ['prettier'], 'javascript': ['prettier'], 'css': ['prettier'], 'typescript': ['prettier'], 'typescriptreact': ['prettier'], 'json': ['fixjson'] }
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
@@ -284,3 +301,20 @@ let g:tern_request_timeout = 1
 let g:tern_request_timeout = 6000
 let g:tern#command = ['tern']
 let g:tern#arguments = [' — persistent']
+
+" vim-dadbod-ui
+
+let g:db_ui_icons = {
+    \ 'expanded': 'L',
+    \ 'collapsed': 'L',
+    \ 'saved_query': '✔︎',
+    \ 'new_query': '+',
+    \ 'tables': '∘',
+    \ 'buffers': '⁖',
+    \ 'connection_ok': '✔︎',
+    \ 'connection_error': '●',
+    \ }
+
+
+" Spell ignore
+let g:vimtex_syntax_nospell_commands = ['evotor', 'dooglys']
