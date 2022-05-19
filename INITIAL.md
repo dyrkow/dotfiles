@@ -33,3 +33,4 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 12. Install nodejs `brew install node` and `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`
+13. `brew install yamllint` and `npm install -g fixjson`
