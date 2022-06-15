@@ -38,4 +38,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     * `brew install watchman`
     * `brew tap homebrew/cask-versions`
     * `brew install --cask zulu11`
-
+    * `brew install --cask android-studio`
+15. IOS environment
+    * `brew install --cask xcodes`
+    * `sudo gem install cocoapods`
