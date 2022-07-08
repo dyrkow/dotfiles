@@ -23,11 +23,12 @@ alias tap='adb shell input keyevent 82'
 
 5. `brew install git`
 6. `brew install neovim`
-7. Install powerlevel10k. `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
-8. `brew install tmux`
-9. Tmux plugin manager `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-10. `git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack`
-11. Configure vim 
+7. `brew install ack` install search engine
+8. Install powerlevel10k. `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
+9. `brew install tmux`
+10. Tmux plugin manager `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+11. `git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack`
+12. Configure vim 
 ```
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
