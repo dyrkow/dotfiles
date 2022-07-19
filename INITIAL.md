@@ -43,3 +43,4 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 15. IOS environment
     * `brew install --cask xcodes`
     * `sudo gem install cocoapods`
+    * `brew install cocoapods`
