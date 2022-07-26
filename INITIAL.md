@@ -35,12 +35,13 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```
 12. Install nodejs `brew install node` and `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`
 13. `brew install yamllint` and `npm install -g fixjson` and `npm install -g eslint`
-14. Android environment
+14. `brew install --cask amethyst`
+15. Android environment
     * `brew install watchman`
     * `brew tap homebrew/cask-versions`
     * `brew install --cask zulu11`
     * `brew install --cask android-studio`
-15. IOS environment
+16. IOS environment
     * `brew install --cask xcodes`
     * `sudo gem install cocoapods`
     * `brew install cocoapods`
