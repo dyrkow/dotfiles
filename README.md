@@ -235,3 +235,9 @@ https://developer.android.com/studio/index.html#downloads
 
 Утилита мониторинга стоимости валюты
 `brew install cointop`
+
+
+
+Фиксим проблему с vim Telescope  с тем, что он ищет файлы в node_modules и тд
+
+`bew install ripgrep` - с этим плагином он автоматом будет игнорить все что не в гите
