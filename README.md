@@ -241,3 +241,14 @@ https://developer.android.com/studio/index.html#downloads
 Фиксим проблему с vim Telescope  с тем, что он ищет файлы в node_modules и тд
 
 `bew install ripgrep` - с этим плагином он автоматом будет игнорить все что не в гите
+
+
+### tmuxinator
+
+`brew install tmuxinator`
+
+tx new project_name - создаст новый проект
+tx edit project_name - отредактировать конфигурацию
+tx start project_name - откроет проект
+
+Все конфигурации сохраняются `~/.config/tmuxinator`
