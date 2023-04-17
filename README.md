@@ -247,8 +247,9 @@ https://developer.android.com/studio/index.html#downloads
 
 `brew install tmuxinator`
 
+```
 tx new project_name - создаст новый проект
 tx edit project_name - отредактировать конфигурацию
 tx start project_name - откроет проект
-
+```
 Все конфигурации сохраняются `~/.config/tmuxinator`
