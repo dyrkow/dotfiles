@@ -54,7 +54,7 @@ set softtabstop=0
 set splitbelow
 set splitright
 set synmaxcol=512
-set tabstop=4
+" set tabstop=4
 set ttyfast
 set updatetime=300
 set visualbell
@@ -71,7 +71,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
+Plug 'gpanders/editorconfig.nvim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -90,7 +91,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'wellle/targets.vim'
-Plug 'yardnsm/vim-import-cost', { 'do': 'yarn' }
 Plug 'yggdroot/indentline'
 
 " Install :CocInstall coc-docker coc-css coc-html coc-json coc-tsserver coc-eslint coc-emmet coc-highlight coc-stylelint coc-xml coc-prettier
@@ -115,8 +115,6 @@ colorscheme hemisu
 
 let g:indentLine_setConceal = 2
 let g:indentLine_concealcursor = ""
-
-let g:NERDTreeLimitedSyntax = 1
 
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
@@ -200,6 +198,7 @@ nmap <leader>f  <Plug>(coc-format-selected)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocActionAsync('format')
+" command! -nargs=0 Format :call CocActionAsync('runCommand', 'eslint.executeAutofix') # Это используем для форматирования нормально настроенного линтера
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
@@ -402,3 +401,4 @@ cnoreabbrev Ack Ack!
 "
 " " Spell ignore
 " let g:vimtex_syntax_nospell_commands = ['evotor', 'dooglys']
+
