@@ -180,6 +180,8 @@ let g:codeium_enabled = v:false
 
 map <Leader>n :NERDTreeToggle<CR>
 
+imap jj <Esc>
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
