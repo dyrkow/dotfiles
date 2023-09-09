@@ -92,7 +92,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'wellle/targets.vim'
 Plug 'yggdroot/indentline'
-" Plug 'Exafunction/codeium.vim' Переопределяет tab, coc не может подсказывать нормально
+Plug 'Exafunction/codeium.vim'
 
 " Install :CocInstall coc-docker coc-css coc-html coc-json coc-tsserver coc-eslint coc-emmet coc-highlight coc-stylelint coc-xml coc-prettier coc-sh
 " coc lint - додуматься как линтить файл
@@ -176,7 +176,9 @@ let g:buffergator_viewport_split_policy = "B"
 let g:buffergator_split_size = 10
 let g:buffergator_autoexpand_on_split = 0
 
+" let g:codeium_disable_bindings = 1
 " let g:codeium_enabled = v:false
+let g:codeium_no_map_tab = 1
 
 "------------------------------ PLUGIN MAP -------------------------------"
 
