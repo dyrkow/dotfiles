@@ -3,4 +3,4 @@ vim_deploy:
 zsh_deploy:
 	cp .zshrc ~/
 tmux_deploy:
-	cp .tmux.conf ~/
+	tmux source .tmux.conf && cp .tmux.conf ~/
