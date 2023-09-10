@@ -94,6 +94,19 @@ Plug 'wellle/targets.vim'
 Plug 'yggdroot/indentline'
 Plug 'Exafunction/codeium.vim'
 
+" TODO: перписать кофигурацию на lua
+" https://github.com/AstroNvim/astrocommunity/tree/main/lua/astrocommunity
+" https://github.com/sindrets/diffview.nvim
+" https://github.com/pwntester/octo.nvim
+" https://github.com/nvim-tree/nvim-tree.lua
+" https://github.com/nvim-neo-tree/neo-tree.nvim
+" https://github.com/rebelot/heirline.nvim
+" https://github.com/lewis6991/gitsigns.nvim
+" https://github.com/freddiehaddad/feline.nvim
+" https://github.com/jovanlanik/fsplash.nvim
+" https://github.com/echasnovski/mini.indentscope
+" https://github.com/lewis6991/satellite.nvim
+
 " Install :CocInstall coc-docker coc-css coc-html coc-json coc-tsserver coc-eslint coc-emmet coc-highlight coc-stylelint coc-xml coc-prettier coc-sh
 " coc lint - додуматься как линтить файл
 " https://github.com/yuki-yano/fzf-preview.vim#demo
