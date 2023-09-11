@@ -189,9 +189,14 @@ let g:buffergator_viewport_split_policy = "B"
 let g:buffergator_split_size = 10
 let g:buffergator_autoexpand_on_split = 0
 
-" let g:codeium_disable_bindings = 1
 " let g:codeium_enabled = v:false
-let g:codeium_no_map_tab = 1
+
+" TODO: переопределить на что-то более удобное
+let g:codeium_disable_bindings = 1
+imap <script><silent><nowait><expr> <C-g> codeium#Accept()
+imap <C-l>   <Cmd>call codeium#CycleCompletions(1)<CR>
+imap <C-k>   <Cmd>call codeium#CycleCompletions(-1)<CR>
+imap <C-x>   <Cmd>call codeium#Clear()<CR>
 
 "------------------------------ PLUGIN MAP -------------------------------"
 
