@@ -272,5 +272,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 cnoreabbrev Ack Ack!
 
-" " Spell ignore
-" let g:vimtex_syntax_nospell_commands = ['evotor', 'dooglys']
+" Spell ignore
+let g:vimtex_syntax_nospell_commands = ['evotor', 'dooglys']
+
+:setlocal spell spelllang=ru_ru,en_us
