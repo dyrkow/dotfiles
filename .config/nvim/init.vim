@@ -272,4 +272,4 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 cnoreabbrev Ack Ack!
 
-setlocal spell spelllang=ru_ru,en_us
+set spell spelllang=ru_ru,en_us
