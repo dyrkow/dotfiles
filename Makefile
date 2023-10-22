@@ -1,6 +1,6 @@
-vim_deploy:
+vim:
 	cp -R ./.config/nvim ~/.config
-zsh_deploy:
+zsh:
 	cp .zshrc ~/
-tmux_deploy:
+tmux:
 	tmux source .tmux.conf && cp .tmux.conf ~/
