@@ -1,4 +1,6 @@
 VIM_CONFIG_DIR = ~/.config/nvim
+install:
+	./scripts/install.sh
 clean-vim:
 	rm -rf $(VIM_CONFIG_DIR)
 config-vim: clean-vim
