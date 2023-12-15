@@ -4,7 +4,7 @@ git --version > /dev/null
 
 if [ $? -eq 0 ]
 then
-    echo "Git installed!"
+    echo "Git already installed!"
 else
     echo "Installing git..."
     /bin/bash -c "$(brew install git)"

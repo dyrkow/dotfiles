@@ -6,7 +6,7 @@ brew -v > /dev/null
 
 if [ $? -eq 0 ]
 then
-    echo "Brew installed!"
+    echo "Brew already installed!"
 else 
     echo "Installing Brew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
