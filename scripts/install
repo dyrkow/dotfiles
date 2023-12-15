@@ -1,7 +1,0 @@
-#!/bin/bash
-
-echo $PWD
-./brew.sh
-./git.sh
-./ansible.sh
-./zsh.sh
