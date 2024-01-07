@@ -4,10 +4,8 @@ install:
 clean-vim:
 	rm -rf $(VIM_CONFIG_DIR)
 config-vim: clean-vim
-	cp -R ./.config/nvim ~/.config
-config-vim-lua: clean-vim
-	cp ./vim/init.lua ~/.config/nvim/
+	cp -R ./vim $(VIM_CONFIG_DIR)
 config-zsh:
-	cp .zshrc ~/
+	cp ./zsh/.zshrc ~/
 config-tmux:
-	tmux source .tmux.conf && cp .tmux.conf ~/
+	tmux source ./tmux/.tmux.conf && cp ./tmux/.tmux.conf ~/
