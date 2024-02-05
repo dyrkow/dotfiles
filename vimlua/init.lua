@@ -1,43 +1,57 @@
+local opt = vim.opt
+local g = vim.g
+
+-- TODO: самый популярный и поддерживаемый пакетный менеджер
+-- https://github.com/folke/lazy.nvim
+
 -- Кодировка файла
-vim.opt.encoding = "UTF-8"
+opt.encoding = "UTF-8"
 
 -- Использование пробелов вместо табуляции
-vim.opt.expandtab = true
+opt.expandtab = true
 
 -- Количество пробелов в табе
-vim.opt.shiftwidth = 4
-vim.opt.tabstop=4
+opt.shiftwidth = 4
+opt.tabstop=4
 
 -- Использование системного буфера
-vim.opt.clipboard = "unnamed"
+opt.clipboard:append("unnamedplus")
 
 -- Выделять строку с курсором
-vim.opt.cursorline = true
+opt.cursorline = true
 
 -- Позволяет открывать другие буферы, не сохраняя изменения в текущем
-vim.opt.hidden = true
+opt.hidden = true
 
 -- Количество команд в истории
-vim.opt.history = 500
+opt.history = 500
 
 -- Игнорирует регистр при поиске в файле
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+opt.ignorecase = true
+
+-- Игнорирует mixed кейсы при поиске в файле
+opt.smartcase = true
+
+-- Split вертикальные окна вправо
+opt.splitright = true
+
+-- Split горизонтальные окна вниз
+opt.splitbelow = true
 
 -- Оптимизация draw интерфейса
-vim.opt.lazyredraw = true
+opt.lazyredraw = true
 
 -- Расстояние в pixels между строк
-vim.opt.linespace = 3
+opt.linespace = 3
 
 -- Визуально отображает пробельные символы при вводе
-vim.opt.list = true
+opt.list = true
 
 -- При вводе символов, скрывает курсор мыши
-vim.opt.mousehide = true
+opt.mousehide = true
 
 -- Максимальное количество колонок подсветки синтаксиса
-vim.opt.synmaxcol = 512
+opt.synmaxcol = 512
 
 -- Какие символы использовать для отображения пробельных символов
 -- TODO: Что-то не работает
@@ -47,16 +61,23 @@ vim.opt.synmaxcol = 512
 -- vim.opt.guifont = "Anonymice Nerd Font Complete Mono:h14"
 
 -- Отображает номер строки
-vim.opt.number = true
+opt.number = true
 
 -- Отображение номера строки и столбца
-vim.opt.ruler = true
+opt.ruler = true
 
 -- Минимальное количество строк над и под курсором
-vim.opt.scrolloff = 20
+opt.scrolloff = 20
 
 -- Новое окно будет добавляться справа
-vim.opt.splitright = true
+opt.splitright = true
 
 -- Улучшает плавность отображение интерфейса
-vim.opt.ttyfast = true
+opt.ttyfast = true
+
+-- Включаем проверку орфографии
+opt.spelllang = { "en_us", "ru" }
+opt.spell = true
+
+-- Лидеркей
+g.mapleader = " "
