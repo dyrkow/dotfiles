@@ -1,11 +1,19 @@
 VIM_CONFIG_DIR = ~/.config/nvim
+
 install:
 	./scripts/install.sh
-clean-vim:
+
+vim-clean:
 	rm -rf $(VIM_CONFIG_DIR)
-config-vim: clean-vim
+
+vim: vim-clean
 	cp -R ./vim $(VIM_CONFIG_DIR)
-config-zsh:
+
+vimlua: vim-clean
+	cp -R ./vimlua $(VIM_CONFIG_DIR)
+
+zsh:
 	cp ./zsh/.zshrc ~/
-config-tmux:
+
+tmux:
 	tmux source ./tmux/.tmux.conf && cp ./tmux/.tmux.conf ~/
