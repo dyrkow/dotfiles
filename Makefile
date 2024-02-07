@@ -15,5 +15,8 @@ vimlua: vim-clean
 zsh:
 	cp ./zsh/.zshrc ~/
 
+font:
+	./scripts/fonts.sh
+
 tmux:
 	tmux source ./tmux/.tmux.conf && cp ./tmux/.tmux.conf ~/
