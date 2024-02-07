@@ -27,7 +27,9 @@ set expandtab
 set foldlevel=1
 set foldmethod=indent
 set foldnestmax=10
-set guifont=Anonymice\ Nerd\ Font\ Complete\ Mono:h14
+" Так-то мы gui не используем, и этот шрифт все равно не применяется
+" Сейчас используем MesloLGS NF Regular 14
+" set guifont=Anonymice\ Nerd\ Font\ Complete\ Mono:h14
 set hidden
 set history=500
 set ic

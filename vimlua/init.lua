@@ -1,86 +1,37 @@
 local keymap = require("keymap");
 
-local opt = vim.opt
-local api = vim.api
-local g = vim.g
+local set = vim.opt
 
--- Кодировка файла
-opt.encoding = "UTF-8"
-
--- Использование пробелов вместо табуляции
-opt.expandtab = true
-
--- Количество пробелов в табе
-opt.shiftwidth = 4
-opt.tabstop=4
-
--- Использование системного буфера
-opt.clipboard:append("unnamedplus")
-
--- Выделять строку с курсором
-opt.cursorline = true
-
--- Позволяет открывать другие буферы, не сохраняя изменения в текущем
-opt.hidden = true
-
--- Количество команд в истории
-opt.history = 500
-
--- Игнорирует регистр при поиске в файле
-opt.ignorecase = true
-
--- Игнорирует mixed кейсы при поиске в файле
-opt.smartcase = true
-
--- Split вертикальные окна вправо
-opt.splitright = true
-
--- Split горизонтальные окна вниз
-opt.splitbelow = true
-
--- Оптимизация draw интерфейса
-opt.lazyredraw = true
-
--- Расстояние в pixels между строк
-opt.linespace = 3
-
--- Визуально отображает пробельные символы при вводе
-opt.list = true
-
--- При вводе символов, скрывает курсор мыши
-opt.mousehide = true
-
--- Максимальное количество колонок подсветки синтаксиса
-opt.synmaxcol = 512
+set.encoding = "UTF-8" -- Кодировка используемая для чтения и записи файлов
+set.expandtab = true -- Замена tab на пробелы
+set.shiftwidth = 4 -- Количество символов, используемых для выравнивания кода при сдвиге вправо
+set.tabstop = 4 -- Количество пробелов, на которое будут заменен tab
+set.clipboard:append("unnamedplus") -- Использование системного буфера
+set.cursorline = true -- Выделять строку с курсором
+set.hidden = true -- Позволяет открывать другие буферы, не сохраняя изменения в текущем
+set.history = 500 -- Количество команд в истории
+set.ignorecase = true -- Игнорирует регистр при поиске в файле
+set.smartcase = true -- Игнорирует mixed кейсы при поиске в файле
+set.splitright = true -- Split вертикальные окна вправо
+set.splitbelow = true -- Split горизонтальные окна вниз
+set.lazyredraw = true -- Оптимизация draw интерфейса
+set.linespace = 3 -- Расстояние в pixels между строк
+set.list = true -- Визуально отображает пробельные символы при вводе
+set.mousehide = true -- При вводе символов, скрывает курсор мыши
+set.synmaxcol = 512 -- Максимальное количество колонок подсветки синтаксиса
+set.number = true -- Отображает номер строки
+set.ruler = true -- Отображение номера строки и столбца
+set.scrolloff = 20 -- Минимальное количество строк над и под курсором
+set.splitright = true -- Новое окно будет добавляться справа
+set.ttyfast = true -- Улучшает плавность отображение интерфейса
+set.spell = true -- Включает проверку орфографии
+set.spelllang = { "en_us", "ru" } -- Какие языки нужно поддерживать при проверке орфографии
 
 -- Какие символы использовать для отображения пробельных символов
 -- TODO: Что-то не работает
 -- vim.opt.listchars = { "tab:‣", "trail:•", "precedes:«", "extends:»" }
 
--- TODO: Что-то не работает
--- vim.opt.guifont = "Anonymice Nerd Font Complete Mono:h14"
-
--- Отображает номер строки
-opt.number = true
-
--- Отображение номера строки и столбца
-opt.ruler = true
-
--- Минимальное количество строк над и под курсором
-opt.scrolloff = 20
-
--- Новое окно будет добавляться справа
-opt.splitright = true
-
--- Улучшает плавность отображение интерфейса
-opt.ttyfast = true
-
--- Включаем проверку орфографии
-opt.spelllang = { "en_us", "ru" }
-opt.spell = true
-
--- Лидеркей
-g.mapleader = " "
+vim.g.mapleader = " " -- Определяем лидер клавишу как пробел
 
 -- Самый популярный и поддерживаемый пакетный менеджер
 -- https://github.com/folke/lazy.nvim
@@ -98,6 +49,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+-- Запускаем пакетный менеджер и передаем в него список плагинов
 require("lazy").setup({
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -111,4 +63,5 @@ require("lazy").setup({
   }
 })
 
+-- Space + n открывает файловое дерево
 keymap.nmap('<leader>n', '<cmd>:Neotree toggle<CR>')
