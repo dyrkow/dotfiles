@@ -25,10 +25,9 @@ require("lazy").setup({
       "MunifTanjim/nui.nvim",
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
-  }
+  },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
 })
 
-require('plugins/ibl');
-
 -- Можно использовать вот эти символы для гита ○ ◌ ◍ ◎ ∴ ✖ ✕ ▲ ☉ ☭ ± ✓ ☠ 🍺 ☐ ☑ ☒
+require('plugins/ibl');
