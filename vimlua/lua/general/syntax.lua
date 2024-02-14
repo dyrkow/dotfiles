@@ -8,7 +8,7 @@ vim.cmd("colorscheme hemisu")
 
 -- Визуализация пробельных символов
 vim.opt.listchars:append {
-  tab = "> ",
+  tab = "► ",
   precedes = "«",
   extends = "»",
   trail = "•",
