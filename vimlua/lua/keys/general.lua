@@ -2,3 +2,9 @@
 require('keys/map')
 
 vim.g.mapleader = " " -- Определяем лидер клавишу как пробел
+
+-- Навигация между буферами
+nm('<C-k>', '<C-w><Up>')
+nm('<C-j>', '<C-w><Down>')
+nm('<C-l>', '<C-w><Right>')
+nm('<C-h>', '<C-w><Left>')
