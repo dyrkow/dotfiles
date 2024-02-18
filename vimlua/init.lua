@@ -27,6 +27,5 @@ require("general/other")
 require("general/syntax")
 
 require("keys/general")
-require("keys/plugins")
 
 require("plugins/lazy")
