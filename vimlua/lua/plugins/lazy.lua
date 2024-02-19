@@ -31,7 +31,8 @@ require("lazy").setup({
   --   name = "catppuccin",
   --   priority = 1000
   -- },
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  { "christoomey/vim-tmux-navigator" }
 })
 
  -- TODO: Изменить цветовую схему под себя, она хорошо настраивается
