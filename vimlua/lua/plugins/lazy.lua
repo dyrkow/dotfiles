@@ -26,19 +26,12 @@ require("lazy").setup({
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
   },
-  -- {
-  --   "catppuccin/nvim",
-  --   name = "catppuccin",
-  --   priority = 1000
-  -- },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   { "christoomey/vim-tmux-navigator" }
 })
 
- -- TODO: Изменить цветовую схему под себя, она хорошо настраивается
- -- цвета можно брать у старой схемы https://noahfrederick.com/vim-color-scheme-hemisu/
--- vim.cmd [[ colorscheme catppuccin ]]
-
-require('plugins/ibl');
-require('plugins/neotree');
-require('plugins/devicons');
+require('plugins/ibl')
+require('plugins/neotree')
+require('plugins/devicons')
+require('plugins/catppuccin')
