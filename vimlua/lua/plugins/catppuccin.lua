@@ -10,7 +10,11 @@ require("catppuccin").setup {
         latte = {},
         frappe = {},
         macchiato = {},
-        mocha = {},
+        mocha = {
+            base = "#000000",
+            mantle = "#000000",
+            crust = "#000000",
+        },
     }
 }
 
