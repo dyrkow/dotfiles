@@ -53,6 +53,13 @@ require("neo-tree").setup({
             -- Включаем режим, при котором содержимое файла под курсором будет показываться в виде окна
             ["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = true } },
             ["o"] = "open",
+            ["oc"] = "noop",
+            ["od"] = "noop",
+            ["og"] = "noop",
+            ["om"] = "noop",
+            ["on"] = "noop",
+            ["os"] = "noop",
+            ["ot"] = "noop",
         }
     },
 })
