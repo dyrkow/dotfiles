@@ -6,7 +6,5 @@ require("general/optimization")
 require("general/spell")
 require("general/other")
 require("general/syntax")
-
 require("keys/general")
-
 require("plugins/lazy")
