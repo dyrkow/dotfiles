@@ -59,7 +59,8 @@ require("neo-tree").setup({
             ["on"] = "noop",
             ["os"] = "noop",
             ["ot"] = "noop",
-            ["/"] = "noop"
+            ["/"] = "noop",
+            ["w"] = "noop"
         }
     },
 })
