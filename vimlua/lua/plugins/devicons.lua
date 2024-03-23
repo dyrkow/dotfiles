@@ -9,6 +9,32 @@ require("nvim-web-devicons").setup({
             color = "#ffffff",
             cterm_color = "#ffffff",
             name = "Ogg"
+        },
+        ["svg"] = {
+            icon = "󰈟",
+            color = "#99D56F",
+            cterm_color = "#99D56F",
+            name = "Svg"
+        },
+        ["png"] = {
+            icon = "󰈟",
+            color = "#99D56F",
+            cterm_color = "#99D56F",
+            name = "Png"
+        },
+        ["gradle"] = {
+            icon = "",
+            color = "#ffffff",
+            cterm_color = "#ffffff",
+            name = "Gradle"
+        }
+    };
+    override_by_filename = {
+        ["gradlew"] = {
+            icon = "",
+            color = "#ffffff",
+            cterm_color = "#ffffff",
+            name = "Gradle"
         }
     };
 })
