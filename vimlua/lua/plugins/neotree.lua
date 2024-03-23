@@ -1,5 +1,8 @@
 require('keys/map')
 
+-- Иконки можно подбирать используя вот эту ссылку
+-- https://www.nerdfonts.com/cheat-sheet
+
 require("neo-tree").setup({
     close_if_last_window = false, -- Закрывает окно дерева, если оно последнее
     enable_git_status = true, -- Показывать статусы гита
