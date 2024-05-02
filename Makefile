@@ -18,5 +18,5 @@ zsh:
 font:
 	./scripts/fonts.sh
 
-tmux:
+tmux_conf:
 	tmux source ./tmux/.tmux.conf && cp ./tmux/.tmux.conf ~/
