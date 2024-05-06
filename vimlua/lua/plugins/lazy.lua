@@ -29,9 +29,11 @@ require("lazy").setup({
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   { "christoomey/vim-tmux-navigator" },
   { "karb94/neoscroll.nvim" },
+  { "brenoprata10/nvim-highlight-colors" },
 })
 
 require('plugins/ibl')
 require('plugins/neotree')
 require('plugins/devicons')
 require('plugins/neoscroll')
+require('plugins/hightlight')
