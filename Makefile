@@ -6,17 +6,17 @@ install:
 vim-clean:
 	rm -rf $(VIM_CONFIG_DIR)
 
-vim: vim-clean
+vimconf: vim-clean
 	cp -R ./vim $(VIM_CONFIG_DIR)
 
-vimlua: vim-clean
+vimluaconf: vim-clean
 	cp -R ./vimlua $(VIM_CONFIG_DIR)
 
-zsh:
+zshconf:
 	cp ./zsh/.zshrc ~/
 
 font:
 	./scripts/fonts.sh
 
-tmux_conf:
+tmuxconf:
 	tmux source ./tmux/.tmux.conf && cp ./tmux/.tmux.conf ~/

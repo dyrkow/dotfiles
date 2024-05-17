@@ -27,7 +27,7 @@ require("lazy").setup({
     },
   },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-  { "christoomey/vim-tmux-navigator" },
+  { "alexghergh/nvim-tmux-navigation" },
   { "karb94/neoscroll.nvim" },
   { "brenoprata10/nvim-highlight-colors" },
   { "windwp/nvim-autopairs" },
@@ -41,3 +41,4 @@ require('plugins/neoscroll')
 require('plugins/hightlight')
 require('plugins/autopairs')
 require('plugins/surround')
+require('plugins/tmuxnavigation')
