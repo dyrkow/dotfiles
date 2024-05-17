@@ -30,6 +30,7 @@ require("lazy").setup({
   { "christoomey/vim-tmux-navigator" },
   { "karb94/neoscroll.nvim" },
   { "brenoprata10/nvim-highlight-colors" },
+  { "windwp/nvim-autopairs" },
 })
 
 require('plugins/ibl')
@@ -37,3 +38,4 @@ require('plugins/neotree')
 require('plugins/devicons')
 require('plugins/neoscroll')
 require('plugins/hightlight')
+require('plugins/autopairs')
