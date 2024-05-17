@@ -32,6 +32,7 @@ require("lazy").setup({
   { "brenoprata10/nvim-highlight-colors" },
   { "windwp/nvim-autopairs" },
   { "kylechui/nvim-surround" },
+  { "terrortylor/nvim-comment" },
 })
 
 require('plugins/ibl')
@@ -42,3 +43,4 @@ require('plugins/hightlight')
 require('plugins/autopairs')
 require('plugins/surround')
 require('plugins/tmuxnavigation')
+require('plugins/comment')
