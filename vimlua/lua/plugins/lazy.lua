@@ -31,6 +31,7 @@ require("lazy").setup({
   { "karb94/neoscroll.nvim" },
   { "brenoprata10/nvim-highlight-colors" },
   { "windwp/nvim-autopairs" },
+  { "kylechui/nvim-surround" },
 })
 
 require('plugins/ibl')
@@ -39,3 +40,4 @@ require('plugins/devicons')
 require('plugins/neoscroll')
 require('plugins/hightlight')
 require('plugins/autopairs')
+require('plugins/surround')
