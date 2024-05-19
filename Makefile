@@ -20,3 +20,6 @@ font:
 
 tmuxconf:
 	tmux source ./tmux/.tmux.conf && cp ./tmux/.tmux.conf ~/
+
+gitconf:
+	cp ./git/.gitconfig ~/

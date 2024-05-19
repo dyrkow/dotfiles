@@ -1,6 +1,6 @@
 [core]
     excludesfile = /Users/dyrkov/.gitignore
-    editor = vim
+    editor = nvim
 [user]
     name = dyrkow
     email = webworkdeveloper@gmail.com
