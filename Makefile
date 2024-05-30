@@ -23,3 +23,11 @@ tmuxconf:
 
 gitconf:
 	cp ./git/.gitconfig ~/
+
+dockerconf:
+	cp ./docker/config.json ~/.docker
+
+# Shut up, American bitches
+dockerdaemonconf:
+	cp ./docker/daemon.json ~/.docker
+
