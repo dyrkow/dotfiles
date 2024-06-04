@@ -31,3 +31,5 @@ dockerconf:
 dockerdaemonconf:
 	cp ./docker/daemon.json ~/.docker
 
+bashconf:
+	cp ./bash/.bash_profile ~/ && source ~/.bash_profile

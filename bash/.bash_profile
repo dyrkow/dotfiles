@@ -9,7 +9,7 @@ alias sshvyksa='ssh -p 4122 root@5.101.114.219'
 alias tap='adb shell input keyevent 82'
 
 export ANDROID_HOME=/Users/dyrkov/Library/Android/sdk
-
+export NODE_OPTIONS=--openssl-legacy-provider
 export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/Lybrary/Android/sdk/platform-tools
 
 COLOR_RED=$(tput setaf 160);
