@@ -33,6 +33,10 @@ require("lazy").setup({
   { "windwp/nvim-autopairs" },
   { "kylechui/nvim-surround" },
   { "terrortylor/nvim-comment" },
+  {
+     "nvim-telescope/telescope.nvim", tag = "0.1.6",
+     dependencies = { "nvim-lua/plenary.nvim" }
+  }
 })
 
 require('plugins/ibl')
@@ -44,3 +48,4 @@ require('plugins/autopairs')
 require('plugins/surround')
 require('plugins/tmuxnavigation')
 require('plugins/comment')
+require('plugins/telescope')
