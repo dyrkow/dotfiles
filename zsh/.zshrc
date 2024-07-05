@@ -57,7 +57,8 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:~/.gems/bin
 
-export KUBECONFIG=~/.kube/config_stage
+export KUBECONFIG=~/.kube/config:~/.kube/config_stage
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 # исправление проблемы upgrade react-native
 export NODE_OPTIONS=--max_old_space_size=16384
