@@ -45,8 +45,6 @@ alias ls="ls -la1"
 alias tap="adb shell input keyevent 82"
 alias k="kubectl"
 
-export KUBECONFIG=~/.kube/config_stage
-
 #--------------------------------- SYSTEM --------------------------------#
 
 export LANG=es_ES.UTF-8
@@ -58,6 +56,8 @@ export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:~/.gems/bin
+
+export KUBECONFIG=~/.kube/config_stage
 
 # исправление проблемы upgrade react-native
 export NODE_OPTIONS=--max_old_space_size=16384
