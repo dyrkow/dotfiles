@@ -43,6 +43,9 @@ alias tmuxconfig="vim ~/.tmux.conf"
 alias vim="nvim"
 alias ls="ls -la1"
 alias tap="adb shell input keyevent 82"
+alias k="kubectl"
+
+export KUBECONFIG=~/.kube/config_stage
 
 #--------------------------------- SYSTEM --------------------------------#
 
