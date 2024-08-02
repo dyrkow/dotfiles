@@ -1,7 +1,7 @@
 require("general/tabs")
 require("general/search")
 require("general/tabs")
-require("general/visability")
+require("general/visibility")
 require("general/optimization")
 require("general/spell")
 require("general/other")
