@@ -67,6 +67,12 @@ require("neo-tree").setup({
             ["l"] = "noop",
         }
     },
+    filesystem = {
+        filtered_items = {
+            hide_dotfiles = false,
+            hide_gitignored = false,
+        }
+    }
 })
 
 -- Neotree plugin
