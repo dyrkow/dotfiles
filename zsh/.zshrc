@@ -58,10 +58,13 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:~/.gems/bin
 
 export KUBECONFIG=~/.kube/config:~/.kube/config_stage
-[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+# [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh) # выключил пока, выдает ошибку при старте
 
 # исправление проблемы upgrade react-native
 export NODE_OPTIONS=--max_old_space_size=16384
+
+# исправление проблемы с ssl в react-native
+export NODE_OPTIONS=--openssl-legacy-provider
 
 export ZSH="$HOME/.oh-my-zsh"
 export TERM=xterm-256color
