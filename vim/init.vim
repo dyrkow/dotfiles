@@ -74,7 +74,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
-Plug 'gpanders/editorconfig.nvim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -225,11 +225,26 @@ xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 " Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocActionAsync('format')
-" command! -nargs=0 Format :call CocActionAsync('runCommand', 'eslint.executeAutofix') # Это используем для форматирования нормально настроенного линтера
+" command! -nargs=0 Format :call CocActionAsync('format')
+" command! -nargs=0 Format :call CocActionAsync('runCommand', 'eslint.executeAutofix')
 
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+function! FormatConditional()
+  let l:eslint_formats = ['javascript', 'typescript', 'javascriptreact', 'typescriptreact']
+  let l:ft = &filetype
+    if index(l:eslint_formats, l:ft) >= 0
+      try
+          call CocActionAsync('runCommand', 'eslint.executeAutofix')
+      catch
+        " Что-то у меня сложилось впечатление что не работает, все равно
+        " ошибка eslint
+        call CocActionAsync('format')
+      endtry
+    else
+      call CocActionAsync('format')
+    endif
+endfunction
+
+command! -nargs=0 Format call FormatConditional()
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
