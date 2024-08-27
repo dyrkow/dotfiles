@@ -36,7 +36,11 @@ require("lazy").setup({
   {
      "nvim-telescope/telescope.nvim", tag = "0.1.6",
      dependencies = { "nvim-lua/plenary.nvim" }
-  }
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+  },
 })
 
 require('plugins/ibl')
@@ -46,6 +50,7 @@ require('plugins/neoscroll')
 require('plugins/hightlight')
 require('plugins/autopairs')
 require('plugins/surround')
+require('plugins/treesitter')
 require('plugins/tmuxnavigation')
 require('plugins/comment')
 require('plugins/telescope')
