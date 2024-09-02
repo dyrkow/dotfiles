@@ -6,26 +6,26 @@ install:
 vim-clean:
 	rm -rf $(VIM_CONFIG_DIR)
 
-vimconf: vim-clean
+cvim: vim-clean
 	cp -R ./vim $(VIM_CONFIG_DIR)
 
-vimluaconf: vim-clean
+cvimlua: vim-clean
 	cp -R ./vimlua $(VIM_CONFIG_DIR)
 
-zshconf:
+czsh:
 	cp ./zsh/.zshrc ~/
 
 font:
 	./scripts/fonts.sh
 
-tmuxconf:
+ctmux:
 	tmux source ./tmux/.tmux.conf && cp ./tmux/.tmux.conf ~/
 
-gitconf:
+cgit:
 	cp ./git/.gitconfig ~/
 
-dockerconf:
+cdocker:
 	cp ./docker/config.json ~/.docker
 
-dockerdaemonconf:
+cdockerdaemon:
 	cp ./docker/daemon.json ~/.docker
