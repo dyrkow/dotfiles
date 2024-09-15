@@ -225,26 +225,28 @@ xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 " Add `:Format` command to format current buffer.
-" command! -nargs=0 Format :call CocActionAsync('format')
+command! -nargs=0 Format :call CocActionAsync('format')
 " command! -nargs=0 Format :call CocActionAsync('runCommand', 'eslint.executeAutofix')
 
-function! FormatConditional()
-  let l:eslint_formats = ['javascript', 'typescript', 'javascriptreact', 'typescriptreact']
-  let l:ft = &filetype
-    if index(l:eslint_formats, l:ft) >= 0
-      try
-          call CocActionAsync('runCommand', 'eslint.executeAutofix')
-      catch
-        " Что-то у меня сложилось впечатление что не работает, все равно
-        " ошибка eslint
-        call CocActionAsync('format')
-      endtry
-    else
-      call CocActionAsync('format')
-    endif
-endfunction
+" NOTE: временно выключил, потому что перестало работать
+" форматирование старых проектов
+" function! FormatConditional()
+"   let l:eslint_formats = ['javascript', 'typescript', 'javascriptreact', 'typescriptreact']
+"   let l:ft = &filetype
+"     if index(l:eslint_formats, l:ft) >= 0
+"       try
+"           call CocActionAsync('runCommand', 'eslint.executeAutofix')
+"       catch
+"         " Что-то у меня сложилось впечатление что не работает, все равно
+"         " ошибка eslint
+"         call CocActionAsync('format')
+"       endtry
+"     else
+"       call CocActionAsync('format')
+"     endif
+" endfunction
 
-command! -nargs=0 Format call FormatConditional()
+" command! -nargs=0 Format call FormatConditional()
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
