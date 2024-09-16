@@ -78,3 +78,4 @@ require("neo-tree").setup({
 -- Neotree plugin
 nm('<leader>n', '<cmd>:Neotree toggle<CR>')
 nm('<leader>gs', '<cmd>:Neotree float git_status<CR>')
+nm('<leader>fc', '<cmd>:Neotree reveal<CR>') -- (Follow Current)Отображает в дереве проекта текущий файл
