@@ -37,6 +37,10 @@ require("lazy").setup({
      "nvim-telescope/telescope.nvim", tag = "0.1.6",
      dependencies = { "nvim-lua/plenary.nvim" }
   },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+  }
   -- Слишком медленно работает и не очень
   -- {
   --   "nvim-treesitter/nvim-treesitter",
@@ -54,4 +58,5 @@ require('plugins/surround')
 -- require('plugins/treesitter')
 require('plugins/tmuxnavigation')
 require('plugins/comment')
+require('plugins/lualine')
 require('plugins/telescope')
