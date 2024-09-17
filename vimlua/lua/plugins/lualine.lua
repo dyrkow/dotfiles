@@ -12,7 +12,7 @@ require('lualine').setup({
           path = 4
         }
       },
-      lualine_x = {'filesize'},
+      lualine_x = { 'filetype', 'filesize'},
       lualine_y = {'encoding', 'progress' },
       lualine_z = {'location'}
     }
