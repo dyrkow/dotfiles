@@ -1,8 +1,12 @@
 --[[ Добавляет поддержку иконок файлов ]]--
 -- https://github.com/nvim-tree/nvim-web-devicons
 
+-- Иконки можно подбирать используя вот эту ссылку
+-- https://www.nerdfonts.com/cheat-sheet
+
 require("nvim-web-devicons").setup({
     color_icons = true;
+    default = true;
     override_by_extension = {
         ["ogg"] = {
             icon = "",
@@ -35,6 +39,13 @@ require("nvim-web-devicons").setup({
             color = "#ffffff",
             cterm_color = "#ffffff",
             name = "Gradle"
-        }
+        },
+        [".prettierrc"] = {
+            icon = "",
+            color = "#6d8086",
+            name = "Prettierrc"
+        },
     };
 })
+
+require("nvim-web-devicons").set_default_icon('', '#6d8086', 65)
