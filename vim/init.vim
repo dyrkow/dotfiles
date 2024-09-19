@@ -172,6 +172,22 @@ else
   set signcolumn=yes
 endif
 
+" Telescope
+let g:telescope_themes = {}
+let g:telescope_themes.defaults = {}
+let g:telescope_themes.defaults.file_ignore_patterns = [
+    \ 'node_modules',
+    \ 'vendor',
+    \ 'build',
+    \ 'dist',
+    \ 'patches',
+    \ '**/*.lock',
+    \ 'out',
+    \ '.git/',
+    \ 'coverage/',
+    \ 'logs/'
+\ ]
+
 " db ui
 let g:db_ui_icons = {
     \ 'expanded': 'L',
