@@ -38,13 +38,13 @@ require("lazy").setup({
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
+  },
+  {
+    "dyrkow/partizan.nvim"
   }
-  -- Слишком медленно работает и не очень
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   build = ":TSUpdate",
-  -- },
 })
+
+require('partizan').setup();
 
 require('plugins/ibl')
 require('plugins/neotree')
@@ -52,7 +52,6 @@ require('plugins/devicons')
 require('plugins/hightlight')
 require('plugins/autopairs')
 require('plugins/surround')
--- require('plugins/treesitter')
 require('plugins/tmuxnavigation')
 require('plugins/comment')
 require('plugins/lualine')
