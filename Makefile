@@ -29,3 +29,6 @@ cdocker:
 
 cdockerdaemon:
 	cp ./docker/daemon.json ~/.docker
+
+caerospace:
+	cp ./aerospace/.aerospace.toml ~/
