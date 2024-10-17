@@ -1,4 +1,2 @@
-# просто вызывает эту куоманду
-# TODO: надо допилить скрипт, чтобы проверял, если уже стоит, не надо ставить
-# хотя возможно это дело brew сам понимает
 brew install --cask nikitabobko/tap/aerospace
+cp "$(dirname "$0")/.aerospace.toml" ~/
