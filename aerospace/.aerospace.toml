@@ -65,6 +65,12 @@ outer.bottom =     2
 outer.top =        2
 outer.right =      2
 
+# https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
+[workspace-to-monitor-force-assignment]
+1 = 1                            # Monitor sequence number from left to right. 1-based indexing
+2 = 'main'                       # Main monitor
+3 = 'secondary'                  # Non-main monitor in case when there are only two monitors
+
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
