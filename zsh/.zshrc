@@ -65,7 +65,7 @@ export KUBECONFIG=~/.kube/config:~/.kube/config_stage
 export NODE_OPTIONS=--max_old_space_size=16384
 
 # исправление проблемы с ssl в react-native metro
-# export NODE_OPTIONS="${NODE_OPTIONS} --openssl-legacy-provider"
+export NODE_OPTIONS="${NODE_OPTIONS} --openssl-legacy-provider"
 
 export ZSH="$HOME/.oh-my-zsh"
 export TERM=xterm-256color
