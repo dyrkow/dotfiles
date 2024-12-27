@@ -1,4 +1,6 @@
-VIM_CONFIG_DIR = ~/.config/nvim
+.PHONY: zsh tmux git docker aerospace
+
+VIM_CONFIG_DIR = $(HOME)/.config/nvim
 
 install:
 	./scripts/install.sh
@@ -6,29 +8,29 @@ install:
 vim-clean:
 	rm -rf $(VIM_CONFIG_DIR)
 
-cvim: vim-clean
+vim: vim-clean
 	cp -R ./vim $(VIM_CONFIG_DIR)
 
-cvimlua: vim-clean
+vimlua: vim-clean
 	cp -R ./vimlua $(VIM_CONFIG_DIR)
 
-czsh:
+zsh:
 	cp ./zsh/.zshrc ~/
 
 font:
 	./scripts/fonts.sh
 
-ctmux:
+tmux:
 	tmux source ./tmux/.tmux.conf && cp ./tmux/.tmux.conf ~/
 
-cgit:
+git:
 	cp ./git/.gitconfig ~/
 
-cdocker:
+docker:
 	cp ./docker/config.json ~/.docker
 
-cdockerdaemon:
+dockerdaemon:
 	cp ./docker/daemon.json ~/.docker
 
-aspace:
+aerospace:
 	./aerospace/apply.sh
