@@ -48,7 +48,8 @@ alias k="kubectl"
 
 #--------------------------------- SYSTEM --------------------------------#
 
-export LANG=es_ES.UTF-8
+export LANG=en_US.UTF-8
+export LC_MESSAGES=en_US.UTF-8
 export EDITOR='vim'
 export PATH="/opt/homebrew/bin:$PATH"
 export GEM_HOME=~/.gems                                                                     |
