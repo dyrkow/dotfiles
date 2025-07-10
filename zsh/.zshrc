@@ -61,6 +61,9 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:~/.gems/bin
 export PATH=$PATH:~/.spoofdpi/bin # Обход dpi блокировки youtube https://github.com/xvzc/SpoofDPI/tree/main
 
+# For Gemini cli
+export GOOGLE_CLOUD_PROJECT=ai-powered-project-465519
+
 export KUBECONFIG=~/.kube/config:~/.kube/config_stage
 # [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh) # выключил пока, выдает ошибку при старте
 
