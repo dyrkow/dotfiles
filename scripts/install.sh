@@ -9,3 +9,4 @@ DIR="$(dirname "${BASH_SOURCE[0]}")"
 ./$DIR/tmux.sh
 ./$DIR/nvim.sh
 ./$DIR/jenv.sh
+./$DIR/gemini.sh
