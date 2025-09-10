@@ -1,36 +1,40 @@
-.PHONY: zsh tmux git docker aerospace
+.PHONY: setup zsh tmux git docker aerospace vimlua brew docker-compose fliqlo fonts gemini jenv nvim
 
-VIM_CONFIG_DIR = $(HOME)/.config/nvim
+# Main setup target
+setup:
+	@echo "Setting up all modules..."
+	@for script in $$(find . -name "bootstrap.sh" | sort); do \
+		echo "Running $$script setup..."; \
+		$$script setup; \
+	done
 
-install:
-	./scripts/install.sh
-
-vim-clean:
-	rm -rf $(VIM_CONFIG_DIR)
-
-vim: vim-clean
-	cp -R ./vim $(VIM_CONFIG_DIR)
-
-vimlua: vim-clean
-	cp -R ./vimlua $(VIM_CONFIG_DIR)
-
+# Individual module targets
 zsh:
-	cp ./zsh/.zshrc ~/
-
-font:
-	./scripts/fonts.sh
+	./zsh/bootstrap.sh apply
 
 tmux:
-	tmux source ./tmux/.tmux.conf && cp ./tmux/.tmux.conf ~/
+	./tmux/bootstrap.sh apply
 
 git:
-	cp ./git/.gitconfig ~/
+	./git/bootstrap.sh apply
 
 docker:
-	cp ./docker/config.json ~/.docker
-
-dockerdaemon:
-	cp ./docker/daemon.json ~/.docker
+	./docker/bootstrap.sh apply
 
 aerospace:
-	./aerospace/apply.sh
+	./aerospace/bootstrap.sh apply
+
+vimlua:
+	./vimlua/bootstrap.sh apply
+
+docker-compose:
+	./docker-compose/bootstrap.sh install
+
+fliqlo:
+	./fliqlo/bootstrap.sh install
+
+fonts:
+	./fonts/bootstrap.sh install
+
+nvim:
+	./nvim/bootstrap.sh install
