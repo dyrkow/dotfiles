@@ -1,24 +1,11 @@
 #!/bin/bash
-
 set -e
+
+source "$(dirname "$0")/../scripts/common.sh"
 
 MODULE_NAME="brew"
 
-print_separator() {
-    echo "────────────────────────────"
-}
-
-log_module_header() {
-    echo
-    echo "📦 Module: $MODULE_NAME"
-    echo
-}
-
-log_installing() {
-    echo "🚀 Installing..."
-}
-
-install_binary() {
+install() {
     log_installing
 
     if command -v "$MODULE_NAME" &> /dev/null; then
@@ -39,36 +26,4 @@ install_binary() {
     fi
 }
 
-fail() {
-    echo
-    print_separator
-    exit 1
-}
-
-main() {
-    local cmd="${1:-setup}"
-
-    echo
-    print_separator
-    log_module_header
-
-    case "$cmd" in
-        install)
-            install_binary || fail
-            ;;
-        setup)
-            install_binary || fail
-            ;;
-        *)
-            echo "❌ Unknown command: $cmd" >&2
-            echo "Usage: $0 [setup|install]" >&2
-            fail
-            ;;
-    esac
-
-    echo
-    print_separator
-    echo
-}
-
-main "$@"
+run_main "$@"

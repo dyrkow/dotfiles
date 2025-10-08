@@ -1,24 +1,11 @@
 #!/bin/bash
-
 set -e
+
+source "$(dirname "$0")/../scripts/common.sh"
 
 MODULE_NAME="Fliqlo"
 
-print_separator() {
-    echo "────────────────────────────"
-}
-
-log_module_header() {
-    echo
-    echo "📦 Module: $MODULE_NAME"
-    echo
-}
-
-log_installing() {
-    echo "🚀 Installing..."
-}
-
-install_screensaver() {
+install() {
     log_installing
 
     if [ -e "$HOME/Library/Screen Savers/Fliqlo.saver" ]; then
@@ -54,36 +41,4 @@ install_screensaver() {
     echo "✅ installed successfully"
 }
 
-fail() {
-    echo
-    print_separator
-    exit 1
-}
-
-main() {
-    local cmd="${1:-setup}"
-
-    echo
-    print_separator
-    log_module_header
-
-    case "$cmd" in
-        install)
-            install_screensaver || fail
-            ;;
-        setup)
-            install_screensaver || fail
-            ;;
-        *)
-            echo "❌ Unknown command: $cmd" >&2
-            echo "Usage: $0 [setup|install]" >&2
-            fail
-            ;;
-    esac
-
-    echo
-    print_separator
-    echo
-}
-
-main "$@"
+run_main "$@"
