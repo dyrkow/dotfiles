@@ -53,10 +53,10 @@ apply_config() {
 
     mkdir -p "$CONFIG_DST_DIR"
 
-    if cp "$CONFIG_SRC" "$CONFIG_DST_FILE"; then
+    if cp "$CONFIG_SRC" "$CONFIG_DST_FILE" && cp "$SCRIPT_DIR/coc-settings.json" "$CONFIG_DST_DIR/"; then
         echo "✅ applied successfully"
     else
-        echo "❌ ERROR: failed to copy config from $CONFIG_SRC to $CONFIG_DST_FILE" >&2
+        echo "❌ ERROR: failed to copy config" >&2
         return 1
     fi
 }
