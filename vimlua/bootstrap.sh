@@ -3,15 +3,14 @@ set -e
 
 source "$(dirname "$0")/../scripts/common.sh"
 
-MODULE_NAME="nvim"
+MODULE_NAME="vimlua"
 PACKAGE_NAME="neovim"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CONFIG_SRC="$SCRIPT_DIR/init.vim"
 CONFIG_DST_DIR="$HOME/.config/nvim"
-CONFIG_DST_FILE="$CONFIG_DST_DIR/init.vim"
 
 install() {
-    install_with_brew "$MODULE_NAME" "$PACKAGE_NAME"
+    # It installs neovim, which is the same as for nvim module
+    install_with_brew "nvim" "$PACKAGE_NAME"
 }
 
 apply() {
@@ -19,7 +18,11 @@ apply() {
     echo "Removing previous nvim configuration..."
     rm -rf "$CONFIG_DST_DIR"
     mkdir -p "$CONFIG_DST_DIR"
-    if cp "$CONFIG_SRC" "$CONFIG_DST_FILE" && cp "$SCRIPT_DIR/coc-settings.json" "$CONFIG_DST_DIR/"; then
+
+    echo "Copying vimlua configuration files..."
+    if cp "$SCRIPT_DIR/init.lua" "$CONFIG_DST_DIR/init.lua" && \
+       cp -r "$SCRIPT_DIR/lua" "$CONFIG_DST_DIR/lua" && \
+       cp -r "$SCRIPT_DIR/colors" "$CONFIG_DST_DIR/colors"; then
         echo "✅ applied successfully"
     else
         echo "❌ ERROR: failed to copy config" >&2
