@@ -1,40 +1,43 @@
-.PHONY: setup zsh tmux git docker aerospace vimlua brew docker-compose fliqlo fonts gemini jenv nvim
+.PHONY: bootstrap install apply %
+SHELL := /bin/bash
 
-# Main setup target
-setup:
-	@echo "Setting up all modules..."
-	@for script in $$(find . -name "bootstrap.sh" | sort); do \
-		echo "Running $$script setup..."; \
-		$$script setup; \
-	done
+# Makefile dispatches to apps/<program>/bootstrap.sh
+# Interface:
+#   make bootstrap [program]  -> install then apply
+#   make install [program]    -> install
+#   make apply [program]      -> apply
 
-# Individual module targets
-zsh:
-	./zsh/bootstrap.sh apply
+bootstrap:
+	@prog="$$(echo "$(MAKECMDGOALS)" | awk '{print $$2}')" ; \
+	if [ -z "$$prog" ]; then \
+		$(MAKE) --no-print-directory install ; \
+		$(MAKE) --no-print-directory apply ; \
+	else \
+		bash "./apps/$$prog/bootstrap.sh" install ; \
+		bash "./apps/$$prog/bootstrap.sh" apply ; \
+	fi
 
-tmux:
-	./tmux/bootstrap.sh apply
+install:
+	@prog="$$(echo "$(MAKECMDGOALS)" | awk '{print $$2}')" ; \
+	if [ -z "$$prog" ]; then \
+		for script in ./apps/*/bootstrap.sh; do \
+			bash "$$script" install; \
+		done; \
+	else \
+		bash "./apps/$$prog/bootstrap.sh" install ; \
+	fi
 
-git:
-	./git/bootstrap.sh apply
+apply:
+	@prog="$$(echo "$(MAKECMDGOALS)" | awk '{print $$2}')" ; \
+	if [ -z "$$prog" ]; then \
+		for script in ./apps/*/bootstrap.sh; do \
+			bash "$$script" apply; \
+		done; \
+	else \
+		bash "./apps/$$prog/bootstrap.sh" apply ; \
+	fi
 
-docker:
-	./docker/bootstrap.sh apply
+# Consume the extra <program> goal for `make <cmd> <program>`
+%:
+	@:
 
-aerospace:
-	./aerospace/bootstrap.sh apply
-
-vimlua:
-	./vimlua/bootstrap.sh apply
-
-docker-compose:
-	./docker-compose/bootstrap.sh install
-
-fliqlo:
-	./fliqlo/bootstrap.sh install
-
-fonts:
-	./fonts/bootstrap.sh install
-
-nvim:
-	./nvim/bootstrap.sh install
