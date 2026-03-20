@@ -2,13 +2,9 @@
 
 ## New Mac install (one command)
 
-1) Replace `<owner>/<repo>` with your GitHub repo.
-
 ```bash
-curl -fsSL https://raw.githubusercontent.com/<owner>/<repo>/main/scripts/remote-bootstrap.sh | bash
+TARGET_DIR="$HOME/work/tmp/dotfiles" && mkdir -p "$TARGET_DIR" && curl -fsSL "https://github.com/dyrkow/dotfiles/archive/refs/heads/master.tar.gz" | tar -xz --strip-components=1 -C "$TARGET_DIR"
 ```
-
-This will install the repo into `~/work/self/dotfiles` and run the full bootstrap.
 
 ## Commands (inside repo)
 
@@ -18,13 +14,13 @@ This will install the repo into `~/work/self/dotfiles` and run the full bootstra
 make bootstrap
 ```
 
-- **Install all apps**:
+- **Install all apps**
 
 ```bash
 make install
 ```
 
-- **Apply all configs**:
+- **Apply all configs**
 
 ```bash
 make apply
