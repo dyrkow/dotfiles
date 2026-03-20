@@ -26,41 +26,6 @@ fail() {
     exit 1
 }
 
-# Generic installer using Homebrew.
-# Usage: install_with_brew [binary_name] [package_name] [cask_install:true|false]
-# - binary_name: The name of the binary to check for. Defaults to $MODULE_NAME.
-# - package_name: The name of the brew package to install. Defaults to binary_name.
-# - cask_install: Set to "true" for cask installations. Defaults to "false".
-install_with_brew() {
-    local binary_name="${1:-$MODULE_NAME}"
-    local package_name="${2:-$binary_name}"
-    local cask_install="${3:-false}"
-
-    log_installing
-
-    if command -v "$binary_name" &> /dev/null; then
-        echo "✅ already installed"
-        return 0
-    fi
-
-    local install_cmd="brew install"
-    if [ "$cask_install" = "true" ]; then
-        install_cmd="brew install --cask"
-    fi
-
-    if $install_cmd "$package_name"; then
-        if command -v "$binary_name" &> /dev/null; then
-            echo "✅ installed successfully"
-        else
-            echo "❌ ERROR: installation failed (binary not found after install)" >&2
-            return 1
-        fi
-    else
-        echo "❌ ERROR: installation script failed" >&2
-        return 1
-    fi
-}
-
 # Main command runner
 run_main() {
     local cmd="${1:-setup}"
@@ -118,4 +83,55 @@ run_main() {
     echo
     print_separator
     echo
+}
+
+# Homebrew/mas helper functions (moved here from helper.sh)
+ensure_brew() {
+    if command -v brew >/dev/null 2>&1; then
+        return 0
+    fi
+
+    # Inline Homebrew installation (no dependency on external installers).
+    if /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; then
+        :
+    else
+        echo "ERROR: Homebrew installation failed" >&2
+        exit 1
+    fi
+
+    # Make brew available in PATH for the current process.
+    if [[ -x /opt/homebrew/bin/brew ]]; then
+        export PATH="/opt/homebrew/bin:${PATH}"
+    elif [[ -x /usr/local/bin/brew ]]; then
+        export PATH="/usr/local/bin:${PATH}"
+    else
+        echo "ERROR: brew binary not found after installation" >&2
+        exit 1
+    fi
+}
+
+install_formula() {
+    local formula="$1"
+    ensure_brew
+    brew install "${formula}"
+}
+
+install_cask() {
+    local cask="$1"
+    ensure_brew
+    brew install --cask "${cask}"
+}
+
+ensure_mas() {
+    ensure_brew
+    if command -v mas >/dev/null 2>&1; then
+        return 0
+    fi
+    brew install mas
+}
+
+install_mas_id() {
+    local id="$1"
+    ensure_mas
+    mas install "${id}"
 }

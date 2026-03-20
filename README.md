@@ -3,7 +3,7 @@
 ## New Mac install (one command)
 
 ```bash
-TARGET_DIR="$HOME/work/tmp/dotfiles" && mkdir -p "$TARGET_DIR" && curl -fsSL "https://github.com/dyrkow/dotfiles/archive/refs/heads/master.tar.gz" | tar -xz --strip-components=1 -C "$TARGET_DIR"
+curl -fsSL "https://github.com/dyrkow/dotfiles/raw/refs/heads/master/scripts/install.sh" -o /tmp/dotfiles-install.sh && bash /tmp/dotfiles-install.sh
 ```
 
 ## Commands (inside repo)
@@ -60,4 +60,4 @@ make bootstrap cursor
    - `install()` - how to install the program
    - `apply()` - how to apply configuration (can be no-op: `apply(){ :; }`)
 
-For Homebrew/mas installs, prefer using `scripts/helper.sh` functions (`install_cask`, `install_formula`, `install_mas_id`) to keep `bootstrap.sh` minimal.
+For Homebrew/mas installs, prefer using `scripts/common.sh` helper functions (`install_cask`, `install_formula`, `install_mas_id`) to keep `bootstrap.sh` minimal.
