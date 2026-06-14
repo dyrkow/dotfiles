@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=react-native-debugger
+INSTALL_CASK=react-native-debugger
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="react-native-debugger"
-
-install() {
-    install_cask "react-native-debugger"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

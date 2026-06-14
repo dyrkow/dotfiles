@@ -1,33 +1,22 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=fonts
 
 source "$(dirname "$0")/../../scripts/common.sh"
 
-MODULE_NAME="fonts"
-
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
 install() {
-    # Non-brew install: copy Nerd Font TTFs.
     log_installing
-
-    # Keeping original behaviour: only install if font isn't present.
-    if fc-list | grep -q "MesloLGSNerdFontMono"; then
-        echo "✅ already installed"
+    if command -v fc-list >/dev/null 2>&1 && fc-list | grep -q "MesloLGSNerdFontMono"; then
+        log_skip
         return 0
     fi
-
-    if cp "$SCRIPT_DIR"/*.ttf "$HOME/Library/Fonts/"; then
-        echo "✅ installed successfully"
+    if cp "${SCRIPT_DIR}"/*.ttf "$HOME/Library/Fonts/"; then
+        echo "✅ installed ${MODULE_NAME}"
     else
         echo "❌ ERROR: installation failed" >&2
         return 1
     fi
 }
 
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

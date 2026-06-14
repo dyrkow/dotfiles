@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=vnc-viewer
+INSTALL_CASK=vnc-viewer
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="vnc-viewer"
-
-install() {
-    install_cask "vnc-viewer"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

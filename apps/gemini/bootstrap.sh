@@ -1,18 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=gemini
+INSTALL_CASK=gemini
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="gemini"
-
-install() {
-    # Gemini is installed as a cask (MacPaw app).
-    install_cask "gemini"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

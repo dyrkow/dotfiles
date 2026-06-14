@@ -1,52 +1,43 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=fliqlo
 
 source "$(dirname "$0")/../../scripts/common.sh"
 
-MODULE_NAME="fliqlo"
-
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
 install() {
-    # Non-brew install: download & place Screen Saver.
     log_installing
-
-    if [ -e "$HOME/Library/Screen Savers/Fliqlo.saver" ]; then
-        echo "✅ already installed"
+    if skip_if_path_exists "$HOME/Library/Screen Savers/Fliqlo.saver"; then
         return 0
     fi
 
-    FLIQLO_URL="https://fliqlo.com/download/fliqlo_185.zip"
-    TEMP_DIR=$(mktemp -d)
+    local fliqlo_url="https://fliqlo.com/download/fliqlo_185.zip"
+    local temp_dir
+    temp_dir=$(mktemp -d)
 
     echo "Downloading Fliqlo..."
-    if ! curl -L "$FLIQLO_URL" -o "$TEMP_DIR/fliqlo.zip"; then
+    if ! curl -L "$fliqlo_url" -o "$temp_dir/fliqlo.zip"; then
         echo "❌ ERROR: download failed" >&2
-        rm -rf "$TEMP_DIR"
+        rm -rf "$temp_dir"
         return 1
     fi
 
     echo "Unzipping Fliqlo..."
-    if ! unzip "$TEMP_DIR/fliqlo.zip" -d "$TEMP_DIR"; then
+    if ! unzip "$temp_dir/fliqlo.zip" -d "$temp_dir"; then
         echo "❌ ERROR: unzip failed" >&2
-        rm -rf "$TEMP_DIR"
+        rm -rf "$temp_dir"
         return 1
     fi
 
     echo "Installing Fliqlo..."
-    if ! mv "$TEMP_DIR/Fliqlo.saver" "$HOME/Library/Screen Savers/"; then
+    if ! mv "$temp_dir/Fliqlo.saver" "$HOME/Library/Screen Savers/"; then
         echo "❌ ERROR: installation failed" >&2
-        rm -rf "$TEMP_DIR"
+        rm -rf "$temp_dir"
         return 1
     fi
 
-    rm -rf "$TEMP_DIR"
-    echo "✅ installed successfully"
+    rm -rf "$temp_dir"
+    echo "✅ installed ${MODULE_NAME}"
 }
 
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

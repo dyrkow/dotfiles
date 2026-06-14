@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=telegram
+INSTALL_CASK=telegram
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="telegram"
-
-install() {
-    install_cask "telegram"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

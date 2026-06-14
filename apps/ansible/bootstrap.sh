@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=ansible
+INSTALL_FORMULA=ansible
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="ansible"
-
-install() {
-    install_formula "ansible"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

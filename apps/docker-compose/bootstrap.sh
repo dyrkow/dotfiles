@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=docker-compose
+INSTALL_FORMULA=docker-compose
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="docker-compose"
-
-install() {
-    install_formula "docker-compose"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

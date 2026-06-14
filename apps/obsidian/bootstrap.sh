@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=obsidian
+INSTALL_CASK=obsidian
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="obsidian"
-
-install() {
-    install_cask "obsidian"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=postman
+INSTALL_CASK=postman
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="postman"
-
-install() {
-    install_cask "postman"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=google-chrome
+INSTALL_CASK=google-chrome
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="google-chrome"
-
-install() {
-    install_cask "google-chrome"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

@@ -1,18 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=yandex-telemost
+INSTALL_CASK=yandextelemost
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="yandex-telemost"
-
-install() {
-    # Brew cask token is `yandextelemost`
-    install_cask "yandextelemost"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

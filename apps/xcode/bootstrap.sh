@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=xcode
+INSTALL_MAS_ID=497799835
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="xcode"
-
-install() {
-    install_mas_id "497799835"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

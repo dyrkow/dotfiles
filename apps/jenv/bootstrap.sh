@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=jenv
+INSTALL_FORMULA=jenv
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="jenv"
-
-install() {
-    install_formula "jenv"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

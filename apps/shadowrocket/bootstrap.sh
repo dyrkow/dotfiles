@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=shadowrocket
+INSTALL_MAS_ID=932747118
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="shadowrocket"
-
-install() {
-    install_mas_id "932747118"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

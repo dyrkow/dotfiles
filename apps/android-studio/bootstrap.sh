@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=android-studio
+INSTALL_CASK=android-studio
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="android-studio"
-
-install() {
-    install_cask "android-studio"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

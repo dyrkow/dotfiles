@@ -1,23 +1,19 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=aerospace
+APPLY_FILES=(".aerospace.toml:$HOME/.aerospace.toml")
 
 source "$(dirname "$0")/../../scripts/common.sh"
 
-MODULE_NAME="aerospace"
-
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
 install() {
     log_installing
-
-    if command -v "$MODULE_NAME" &> /dev/null; then
-        echo "✅ already installed"
+    if skip_if_command_exists "${MODULE_NAME}"; then
         return 0
     fi
-
     if /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nikitabobko/aerospace/main/install.sh)"; then
-        if command -v "$MODULE_NAME" &> /dev/null; then
-            echo "✅ installed successfully"
+        if command -v "${MODULE_NAME}" >/dev/null 2>&1; then
+            echo "✅ installed ${MODULE_NAME}"
         else
             echo "❌ ERROR: installation failed (binary not found after install)" >&2
             return 1
@@ -28,17 +24,4 @@ install() {
     fi
 }
 
-apply() {
-    log_applying_config
-    local config_src="$SCRIPT_DIR/.aerospace.toml"
-    local config_dst="$HOME/.aerospace.toml"
-    if cp "$config_src" "$config_dst"; then
-        echo "✅ applied successfully"
-    else
-        echo "❌ ERROR: failed to copy config" >&2
-        return 1
-    fi
-}
-
-run_main "$@"
-
+run_module "$@"

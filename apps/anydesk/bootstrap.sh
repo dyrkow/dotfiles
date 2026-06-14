@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=anydesk
+INSTALL_CASK=anydesk
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="anydesk"
-
-install() {
-    install_cask "anydesk"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

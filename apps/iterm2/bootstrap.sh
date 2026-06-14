@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=iterm2
+INSTALL_CASK=iterm2
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="iterm2"
-
-install() {
-    install_cask "iterm2"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

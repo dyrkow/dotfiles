@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=figma
+INSTALL_CASK=figma
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="figma"
-
-install() {
-    install_cask "figma"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"

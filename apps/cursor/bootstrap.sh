@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+MODULE_NAME=cursor
+INSTALL_CASK=cursor
 
 source "$(dirname "$0")/../../scripts/common.sh"
-
-MODULE_NAME="cursor"
-
-install() {
-    install_cask "cursor"
-}
-
-apply() {
-    :
-}
-
-run_main "$@"
-
+run_module "$@"
