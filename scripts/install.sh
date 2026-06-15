@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-TARGET_DIR="$HOME/work/self/dotfiles"
+TARGET_DIR="$HOME/Work/Self/dotfiles"
 ARCHIVE_URL="https://github.com/dyrkow/dotfiles/archive/refs/heads/master.tar.gz"
 
 SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
 trap 'rm -f "$SCRIPT_PATH"' EXIT
 
-mkdir -p "$HOME/work/self"
+mkdir -p "$HOME/Work/Self"
 rm -rf "$TARGET_DIR"
 mkdir -p "$TARGET_DIR"
 
