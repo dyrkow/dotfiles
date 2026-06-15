@@ -4,6 +4,8 @@
 
 ```bash
 curl -fsSL "https://github.com/dyrkow/dotfiles/raw/refs/heads/master/scripts/install.sh" -o /tmp/dotfiles-install.sh && bash /tmp/dotfiles-install.sh
+```
+```bash
 cd ~/Work/Self/dotfiles && make bootstrap
 ```
 
