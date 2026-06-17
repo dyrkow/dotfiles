@@ -12,9 +12,6 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 #---------------------------------- BASE ---------------------------------#
 
@@ -41,7 +38,6 @@ alias gr="git reset"
 alias grh="git reset head --hard"
 alias vimconfig="vim ~/.config/nvim/init.vim"
 alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
 alias tmuxconfig="vim ~/.tmux.conf"
 alias vim="nvim"
 alias ls="ls -la1"
@@ -74,7 +70,6 @@ export NODE_OPTIONS=--max_old_space_size=16384
 # исправление проблемы с ssl в react-native metro
 export NODE_OPTIONS="${NODE_OPTIONS} --openssl-legacy-provider"
 
-export ZSH="$HOME/.oh-my-zsh"
 export TERM=xterm-256color
 export NVM_DIR="$HOME/.nvm"
  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -83,11 +78,6 @@ export NVM_DIR="$HOME/.nvm"
 # jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
-
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # The next line updates PATH for Yandex Cloud CLI.
 if [ -f '/Users/dyrkov/yandex-cloud/path.bash.inc' ]; then source '/Users/dyrkov/yandex-cloud/path.bash.inc'; fi
