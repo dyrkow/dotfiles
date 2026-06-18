@@ -13,8 +13,37 @@ typeset -g PROMPT_CLR_UNTRACKED='#777777'
 typeset -g PROMPT_CLR_ARROW='#B1D631'
 typeset -g PROMPT_CLR_TIME='#777777'
 
+typeset -g PROMPT_PATH_PARENT_LEN=2
+
 _prompt_path() {
-  echo -n "%F{${PROMPT_CLR_PATH}}%~%f"
+  emulate -L zsh
+  local -a parts
+  local i seg out="" n
+
+  if [[ $PWD == $HOME ]]; then
+    echo -n "%F{${PROMPT_CLR_PATH}}~%f"
+    return
+  fi
+
+  if [[ $PWD == $HOME/* ]]; then
+    parts=("${(@)${(s:/:)${PWD#$HOME/}}}")
+    out="~"
+  else
+    parts=("${(@)${(s:/:)PWD}}")
+  fi
+
+  n=$#parts
+  for (( i=1; i <= n; i++ )); do
+    seg=$parts[i]
+    out+="/"
+    if (( i == n )); then
+      out+=$seg
+    else
+      out+=${seg[1,$PROMPT_PATH_PARENT_LEN]}
+    fi
+  done
+
+  echo -n "%F{${PROMPT_CLR_PATH}}${out}%f"
 }
 
 _prompt_git() {
