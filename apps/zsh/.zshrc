@@ -52,7 +52,6 @@ export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:~/.gems/bin
-export PATH=$PATH:~/.spoofdpi/bin # Обход dpi блокировки youtube https://github.com/xvzc/SpoofDPI/tree/main
 
 # For Gemini cli
 export GOOGLE_CLOUD_PROJECT=ai-powered-project-465519
