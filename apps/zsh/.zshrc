@@ -79,3 +79,5 @@ if [ -f '/Users/dyrkov/yandex-cloud/path.bash.inc' ]; then source '/Users/dyrkov
 
 # The next line enables shell command completion for yc.
 if [ -f '/Users/dyrkov/yandex-cloud/completion.zsh.inc' ]; then source '/Users/dyrkov/yandex-cloud/completion.zsh.inc'; fi
+
+[[ -f "$HOME/.prompt.zsh" ]] && source "$HOME/.prompt.zsh"
