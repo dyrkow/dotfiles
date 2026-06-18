@@ -29,7 +29,7 @@ _prompt_git() {
   branch=$(git symbolic-ref --short HEAD 2>/dev/null) \
     || branch=$(git rev-parse --short HEAD 2>/dev/null)
 
-  out+=" %F{${PROMPT_CLR_BRANCH}}${branch}%f"
+  out+=" %B%F{${PROMPT_CLR_BRANCH}}${branch}%f%b"
 
   upstream=$(git rev-parse --abbrev-ref @{upstream} 2>/dev/null)
   if [[ -n $upstream ]]; then
