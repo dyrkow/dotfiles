@@ -4,7 +4,7 @@ setopt prompt_subst transient_rprompt
 
 # Palette (truecolor hex) — customize here
 typeset -g PROMPT_CLR_PATH='#9FD3E6'
-typeset -g PROMPT_CLR_BRANCH='#BBFFAA'
+typeset -g PROMPT_CLR_BRANCH='#B1D631'
 typeset -g PROMPT_CLR_AHEAD='#777777'
 typeset -g PROMPT_CLR_BEHIND='#D65E76'
 typeset -g PROMPT_CLR_STAGED='#B1D631'
