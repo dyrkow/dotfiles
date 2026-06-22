@@ -22,7 +22,7 @@ PLIST="$HOME/Library/Preferences/com.apple.symbolichotkeys.plist"
 HOTKEYS=(
     "64|1|103|5|1048576|Show Spotlight search"
     "61|0|32|49|786432|Select next source in Input menu"
-    "60|1|98|11|1048576|Select previous input source"
+    "60|1|32|49|1048576|Select previous input source"
 )
 
 source "$(dirname "$0")/../../scripts/common.sh"
