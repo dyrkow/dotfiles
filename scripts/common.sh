@@ -114,23 +114,15 @@ skip_if_command_exists() {
 
 # Homebrew/mas helper functions
 ensure_brew() {
-    if command -v brew >/dev/null 2>&1; then
-        return 0
+    # In case brew was just installed, ensure it's in the PATH for this script's execution.
+    # This is mainly for Apple Silicon where brew is in /opt/homebrew.
+    if [[ -x /opt/homebrew/bin/brew ]] && [[ ":$PATH:" != *":/opt/homebrew/bin:"* ]]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
 
-    if /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; then
-        :
-    else
-        echo "ERROR: Homebrew installation failed" >&2
-        exit 1
-    fi
-
-    if [[ -x /opt/homebrew/bin/brew ]]; then
-        export PATH="/opt/homebrew/bin:${PATH}"
-    elif [[ -x /usr/local/bin/brew ]]; then
-        export PATH="/usr/local/bin:${PATH}"
-    else
-        echo "ERROR: brew binary not found after installation" >&2
+    if ! command -v brew >/dev/null 2>&1; then
+        echo "ERROR: Homebrew is not installed." >&2
+        echo "Please run the main installation script from the README first." >&2
         exit 1
     fi
 }
