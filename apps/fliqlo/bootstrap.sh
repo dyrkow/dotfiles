@@ -11,7 +11,7 @@ install() {
         return 0
     fi
 
-    if brew install --cask --no-quarantine fliqlo; then
+    if brew cask install --no-quarantine fliqlo; then
         echo "✅ installed ${MODULE_NAME}"
     else
         echo "❌ ERROR: installation failed" >&2
