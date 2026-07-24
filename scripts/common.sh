@@ -191,9 +191,21 @@ apply_copy_file() {
     local parent
     parent="$(dirname "${dst}")"
     mkdir -p "${parent}"
-    if cp "${src}" "${dst}"; then
-        return 0
+
+    if [[ -d "${src}" ]]; then
+        # If src is a directory, copy its contents recursively.
+        # The destination must also be a directory.
+        mkdir -p "${dst}"
+        if cp -r "${src}/." "${dst}/"; then
+            return 0
+        fi
+    else
+        # It's a file, copy it.
+        if cp "${src}" "${dst}"; then
+            return 0
+        fi
     fi
+
     echo "❌ ERROR: failed to copy ${src} -> ${dst}" >&2
     return 1
 }
