@@ -38,13 +38,8 @@ require("lazy").setup({
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
-  },
-  {
-    "dyrkow/partizan.nvim"
   }
 })
-
-require('partizan').setup();
 
 require('plugins/ibl')
 require('plugins/neotree')
