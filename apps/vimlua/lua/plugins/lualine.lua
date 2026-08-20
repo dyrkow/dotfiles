@@ -43,7 +43,7 @@ require('lualine').setup({
         },
       }
 
-      return theme
+      return { theme = theme }
     end)();
     sections = {
       lualine_a = {'mode'},
