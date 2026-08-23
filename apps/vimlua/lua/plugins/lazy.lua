@@ -38,7 +38,8 @@ require("lazy").setup({
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
-  }
+  },
+  { "lewis6991/gitsigns.nvim" }
 })
 
 require('plugins/ibl')
@@ -50,4 +51,5 @@ require('plugins/surround')
 require('plugins/tmuxnavigation')
 require('plugins/comment')
 require('plugins/lualine')
+require('plugins/gitsigns')
 require('plugins/telescope')

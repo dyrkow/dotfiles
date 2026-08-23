@@ -275,6 +275,14 @@ function M.apply(palette)
   link("TelescopePromptPrefix", "Identifier")
   link("TelescopePromptCounter", "NonText")
 
+  -- gitsigns.nvim (знаки изменений git поверх номера строки)
+  set_hl("GitSignsAdd",          { fg = palette.normGreen })  -- +
+  set_hl("GitSignsChange",       { fg = palette.normBlue })   -- ~
+  set_hl("GitSignsDelete",       { fg = palette.normRed })    -- _
+  set_hl("GitSignsTopdelete",    { fg = palette.normRed })    -- ‾
+  set_hl("GitSignsChangedelete", { fg = palette.normBlue })   -- ~
+  set_hl("GitSignsUntracked",    { fg = palette.comment })    -- ┆
+
   -- indent-blankline.nvim (ibl)
   set_hl("IblIndent", { fg = palette.subtle })
   set_hl("IblScope", { fg = palette.accent1, underline = true })
