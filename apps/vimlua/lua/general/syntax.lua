@@ -4,9 +4,7 @@
 -- Настройка цветовой схемы
 vim.cmd("set background=dark")
 vim.cmd("syntax on")
-vim.cmd.colorsche('hemisu')
--- моя кастомная схема похожая на hemisu
--- vim.cmd.colorsche('partizan')
+vim.cmd.colorscheme('hemisu')
 
 -- Визуализация пробельных символов
 vim.opt.listchars:append {

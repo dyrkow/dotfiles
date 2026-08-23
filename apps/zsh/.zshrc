@@ -52,6 +52,7 @@ export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:~/.gems/bin
+export PATH=$HOME/.local/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
@@ -71,8 +72,10 @@ export NODE_OPTIONS=--max_old_space_size=16384
 
 export TERM=xterm-256color
 export NVM_DIR="$HOME/.nvm"
- [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
- [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+_nvm_prefix="${HOMEBREW_PREFIX:-$(brew --prefix 2>/dev/null)}"
+[ -s "${_nvm_prefix}/opt/nvm/nvm.sh" ] && . "${_nvm_prefix}/opt/nvm/nvm.sh"
+[ -s "${_nvm_prefix}/opt/nvm/etc/bash_completion.d/nvm" ] && . "${_nvm_prefix}/opt/nvm/etc/bash_completion.d/nvm"
+unset _nvm_prefix
 
 # jenv
 export PATH="$HOME/.jenv/bin:$PATH"

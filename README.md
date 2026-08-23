@@ -54,3 +54,16 @@ See [`scripts/common.sh`](scripts/common.sh) for available variables and helpers
 
 - `nvim` and `vimlua` both install Neovim — use only one on a new machine.
 - Modules with `SKIP_INSTALL=1` support `make apply` only, not `make install`.
+
+## Этапы которые нужно сделать обязательно для перехода, их надо потом автоматизировать
+
+настройка корпоративного VPN
+
+
+gitlab ssh
+github ssh перекидываем из .ssh папки
+
+хотелось бы так же hosts  файл тоже копировать
+
+перетаскивание ~/.dps/data.json для утилиты dps,
+установка dps, clone git, yarn, yarn build, npm link
