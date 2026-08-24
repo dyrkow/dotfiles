@@ -39,7 +39,13 @@ require("lazy").setup({
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
-  { "lewis6991/gitsigns.nvim" }
+  { "lewis6991/gitsigns.nvim" },
+  {
+    -- Ветка main требует nvim >= 0.11, поэтому пиним master
+    "nvim-treesitter/nvim-treesitter",
+    branch = "master",
+    build = ":TSUpdate",
+  }
 })
 
 require('plugins/ibl')
@@ -53,3 +59,4 @@ require('plugins/comment')
 require('plugins/lualine')
 require('plugins/gitsigns')
 require('plugins/telescope')
+require('plugins/treesitter')
