@@ -32,7 +32,7 @@ require("lazy").setup({
   { "kylechui/nvim-surround" },
   { "terrortylor/nvim-comment" },
   {
-     "nvim-telescope/telescope.nvim", tag = "0.1.6",
+     "nvim-telescope/telescope.nvim", tag = "v0.2.2",
      dependencies = { "nvim-lua/plenary.nvim" }
   },
   {
@@ -58,9 +58,8 @@ require("lazy").setup({
     cmd = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
   },
   {
-    -- Ветка main требует nvim >= 0.11, поэтому пиним master
     "nvim-treesitter/nvim-treesitter",
-    branch = "master",
+    branch = "main",
     build = ":TSUpdate",
   },
   {

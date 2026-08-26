@@ -7,4 +7,10 @@ APPLY_DIR="$HOME/.config/nvim"
 APPLY_TREE=(init.lua lua colors)
 
 source "$(dirname "$0")/../../scripts/common.sh"
+
+install() {
+    install_formula "${INSTALL_FORMULA}"
+    install_formula "tree-sitter-cli"
+}
+
 run_module "$@"

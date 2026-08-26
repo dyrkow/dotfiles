@@ -1,27 +1,37 @@
---[[ Подсветка синтаксиса на базе treesitter ]]--
+--[[ Подсветка синтаксиса на базе treesitter (nvim 0.12+) ]]--
 -- https://github.com/nvim-treesitter/nvim-treesitter
 
-require("nvim-treesitter.configs").setup({
-  ensure_installed = {
-    -- редактор
+require("nvim-treesitter").setup({
+  install_dir = vim.fn.stdpath("data") .. "/site",
+})
+
+require("nvim-treesitter").install({
+  -- редактор
+  "lua", "vim", "vimdoc",
+  -- JS/TS ядро
+  "javascript", "typescript", "tsx", "json", "json5",
+  -- разметка и стили
+  "html", "css", "scss",
+  -- конфиги и инфраструктура
+  "yaml", "toml", "xml", "bash", "dockerfile", "make", "cmake",
+  -- бэкенд/API
+  "graphql", "sql", "http", "prisma",
+  -- документация
+  "markdown", "markdown_inline",
+  -- VCS и патчи
+  "diff", "gitcommit", "gitignore", "git_rebase", "git_config", "gitattributes",
+})
+
+-- Подсветка: включается через автокоманду (встроена в nvim 0.12)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {
     "lua", "vim", "vimdoc",
-    -- JS/TS ядро
-    "javascript", "typescript", "tsx", "json", "jsonc", "json5",
-    -- разметка и стили
+    "javascript", "typescript", "tsx", "json", "json5",
     "html", "css", "scss",
-    -- конфиги и инфраструктура
     "yaml", "toml", "xml", "bash", "dockerfile", "make", "cmake",
-    -- бэкенд/API
     "graphql", "sql", "http", "prisma",
-    -- документация
     "markdown", "markdown_inline",
-    -- VCS и патчи
     "diff", "gitcommit", "gitignore", "git_rebase", "git_config", "gitattributes",
   },
-  sync_install = false,
-  auto_install = true,
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
+  callback = function() vim.treesitter.start() end,
 })
