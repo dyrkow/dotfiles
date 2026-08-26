@@ -50,10 +50,35 @@ require("lazy").setup({
   },
   { "sindrets/diffview.nvim" },
   {
+    "kristijanhusak/vim-dadbod-ui",
+    dependencies = {
+      { "tpope/vim-dadbod", lazy = true },
+      { "kristijanhusak/vim-dadbod-completion", ft = { "sql" }, lazy = true },
+    },
+    cmd = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
+  },
+  {
     -- Ветка main требует nvim >= 0.11, поэтому пиним master
     "nvim-treesitter/nvim-treesitter",
     branch = "master",
     build = ":TSUpdate",
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "onsails/lspkind-nvim",
+    },
+  },
+  { "williamboman/mason.nvim" },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = {
+      { "williamboman/mason.nvim" },
+      { "neovim/nvim-lspconfig" },
+    },
   }
 })
 
@@ -71,3 +96,6 @@ require('plugins/telescope')
 require('plugins/treesitter')
 require('plugins/neogit')
 require('plugins/diffview')
+require('plugins/dadbod')
+require('plugins/lsp')
+require('plugins/cmp')
