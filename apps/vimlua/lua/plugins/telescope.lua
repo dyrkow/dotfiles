@@ -49,5 +49,4 @@ vim.keymap.set('n', '<leader>fr', function()
   builtin.resume({ initial_mode = "normal" })
 end, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
-vim.keymap.set('n', '<leader>gs', builtin.git_status, {})
+

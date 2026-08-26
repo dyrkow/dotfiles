@@ -3,6 +3,11 @@
 local gitsigns = require('gitsigns')
 
 gitsigns.setup({
+  current_line_blame = true,
+  current_line_blame_opts = {
+    virt_text_pos = 'eol',
+    delay = 1000,
+  },
   signs = {
     add          = { text = '+' },   -- добавленная строка
     change       = { text = '~' },   -- изменённая строка
@@ -24,3 +29,4 @@ vim.keymap.set('n', '<leader>hp', gitsigns.preview_hunk) -- превью диф�
 vim.keymap.set('n', '<leader>hb', function()
   gitsigns.blame_line({ full = true })                   -- git blame строки
 end)
+vim.keymap.set('n', '<leader>gb', function() gitsigns.blame() end) -- blame всего файла

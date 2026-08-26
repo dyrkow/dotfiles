@@ -41,6 +41,15 @@ require("lazy").setup({
   },
   { "lewis6991/gitsigns.nvim" },
   {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "sindrets/diffview.nvim",
+    },
+  },
+  { "sindrets/diffview.nvim" },
+  {
     -- Ветка main требует nvim >= 0.11, поэтому пиним master
     "nvim-treesitter/nvim-treesitter",
     branch = "master",
@@ -60,3 +69,5 @@ require('plugins/lualine')
 require('plugins/gitsigns')
 require('plugins/telescope')
 require('plugins/treesitter')
+require('plugins/neogit')
+require('plugins/diffview')
