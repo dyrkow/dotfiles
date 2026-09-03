@@ -20,7 +20,6 @@ alias c="clear"
 alias dc="docker-compose"
 alias dcl="docker-compose logs -f"
 alias gap="git add -p"
-alias g="gemini"
 alias ga="git add"
 alias gl="git pull"
 alias tx="tmuxinator"
@@ -58,8 +57,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
 [ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
 
-# For Gemini cli
-export GOOGLE_CLOUD_PROJECT=ai-powered-project-465519
 
 export KUBECONFIG=~/.kube/config:~/.kube/config_stage
 # [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh) # выключил пока, выдает ошибку при старте
