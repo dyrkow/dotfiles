@@ -3,7 +3,7 @@ set -euo pipefail
 
 MODULE_NAME=tmux
 INSTALL_FORMULA=tmux
-APPLY_FILES=(".tmux.conf:$HOME/.tmux.conf")
+APPLY_FILES=(".tmux.conf:$HOME/.tmux.conf" "themes:$HOME/.tmux/themes")
 
 source "$(dirname "$0")/../../scripts/common.sh"
 
