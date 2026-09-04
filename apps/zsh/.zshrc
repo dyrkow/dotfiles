@@ -78,10 +78,10 @@ unset _nvm_prefix
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-# The next line updates PATH for Yandex Cloud CLI.
-if [ -f '/Users/dyrkov/yandex-cloud/path.bash.inc' ]; then source '/Users/dyrkov/yandex-cloud/path.bash.inc'; fi
+# The next line updates PATH for CLI.
+if [ -f '/Users/dyrkow/yandex-cloud/path.bash.inc' ]; then source '/Users/dyrkow/yandex-cloud/path.bash.inc'; fi
 
 # The next line enables shell command completion for yc.
-if [ -f '/Users/dyrkov/yandex-cloud/completion.zsh.inc' ]; then source '/Users/dyrkov/yandex-cloud/completion.zsh.inc'; fi
+if [ -f '/Users/dyrkow/yandex-cloud/completion.zsh.inc' ]; then source '/Users/dyrkow/yandex-cloud/completion.zsh.inc'; fi
 
 [[ -f "$HOME/.prompt.zsh" ]] && source "$HOME/.prompt.zsh"
