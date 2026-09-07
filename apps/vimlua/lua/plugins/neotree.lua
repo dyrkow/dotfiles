@@ -51,6 +51,7 @@ require("neo-tree").setup({
         },
     },
     window = {
+        width = 35,
         mapping_options = {
             noremap = true,
             nowait = true,
