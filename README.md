@@ -71,3 +71,13 @@ github ssh перекидываем из .ssh папки
 ## k9s
 
 - k9s конфиг и `~/.kube/config` не хранятся в репозитории (содержат секреты кластера) — переносим вручную на новой машине.
+
+## npm registry
+
+`~/.npmrc` содержит секреты (токен приватного реестра) и не хранится в репозитории — настраивается вручную на новой машине:
+
+```ini
+registry=https://registry.npmjs.org/
+@dooglys:registry=https://gitlab.dooglys.net/api/v4/projects/5/packages/npm/
+//gitlab.dooglys.net/api/v4/projects/5/packages/npm/:_authToken=<TOKEN>
+```

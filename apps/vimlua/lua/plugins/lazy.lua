@@ -78,7 +78,8 @@ require("lazy").setup({
       { "williamboman/mason.nvim" },
       { "neovim/nvim-lspconfig" },
     },
-  }
+  },
+  { "stevearc/conform.nvim", opts = {} }
 })
 
 require('plugins/ibl')
@@ -97,5 +98,6 @@ require('plugins/neogit')
 require('plugins/diffview')
 require('plugins/dadbod')
 require('plugins/lsp')
+require('plugins/conform')
 require('plugins/diagnostics')
 require('plugins/cmp')

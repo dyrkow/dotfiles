@@ -40,7 +40,7 @@ end, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>b', function()
   builtin.buffers({
-    sort_mru = true,
+    sort_lastused = true,
     ignore_current_buffer = true,
     initial_mode = "normal",
   })
