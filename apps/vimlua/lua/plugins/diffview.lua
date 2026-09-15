@@ -11,6 +11,10 @@ local function system_ok_or_empty(cmd)
 end
 
 local function default_branch()
+  local branch = system_ok_or_empty('git symbolic-ref --short -q refs/remotes/origin/HEAD 2>/dev/null')
+  if branch ~= '' then
+    return branch:gsub('^origin/', '')
+  end
   for _, candidate in ipairs({ 'dev', 'main', 'master' }) do
     if system_ok_or_empty('git rev-parse --verify --quiet refs/heads/' .. candidate) ~= '' then
       return candidate
