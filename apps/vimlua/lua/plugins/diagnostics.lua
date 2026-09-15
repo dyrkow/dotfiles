@@ -22,12 +22,12 @@ for name, color in pairs({
   vim.api.nvim_set_hl(0, name, { fg = color.gui })
 end
 
--- Цветной текст сообщения в конце строки
+-- Цвет текста сообщения в блоке под строкой (virtual_lines)
 for name, color in pairs({
-  DiagnosticVirtualTextError = palette.normRed,
-  DiagnosticVirtualTextWarn = palette.accent4,
-  DiagnosticVirtualTextInfo = palette.accent1,
-  DiagnosticVirtualTextHint = palette.normGreen,
+  DiagnosticVirtualLinesError = palette.normRed,
+  DiagnosticVirtualLinesWarn = palette.accent4,
+  DiagnosticVirtualLinesInfo = palette.accent1,
+  DiagnosticVirtualLinesHint = palette.normGreen,
 }) do
   vim.api.nvim_set_hl(0, name, { fg = color.gui })
 end
@@ -38,21 +38,14 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.ERROR] = '●',
       [vim.diagnostic.severity.WARN] = '▲',
       [vim.diagnostic.severity.INFO] = 'ℹ',
-      [vim.diagnostic.severity.HINT] = '◆',
+      [vim.diagnostic.severity.HINT] = '✱',
     },
   },
-  virtual_text = {
-    spacing = 2,
-    prefix = '',
+  virtual_text = false,
+  virtual_lines = {
+    current_line = true,
     format = function(diagnostic)
-      local labels = {
-        [vim.diagnostic.severity.ERROR] = 'Error:',
-        [vim.diagnostic.severity.WARN] = 'Warn:',
-        [vim.diagnostic.severity.INFO] = 'Info:',
-        [vim.diagnostic.severity.HINT] = 'Hint:',
-      }
-      local label = labels[diagnostic.severity] or 'Diagnostic:'
-      return string.format('%s %s', label, diagnostic.message)
+      return diagnostic.message
     end,
   },
   underline = true,
