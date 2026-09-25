@@ -1,6 +1,20 @@
 --[[ Дифф-панели и история файлов/веток ]]--
 -- https://github.com/sindrets/diffview.nvim
-require('diffview').setup({})
+local close_diffview = '<cmd>DiffviewClose<cr>'
+
+require('diffview').setup({
+  keymaps = {
+    view = {
+      ['<Esc>'] = close_diffview,
+    },
+    file_panel = {
+      ['<Esc>'] = close_diffview,
+    },
+    file_history_panel = {
+      ['<Esc>'] = close_diffview,
+    },
+  },
+})
 
 local function system_ok_or_empty(cmd)
   local result = vim.fn.system(cmd)
