@@ -60,6 +60,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
 [ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
 
+# Прокси для зарубежны прогулок
+export HTTPS_PROXY="http://10.128.162.33:1080"
+export HTTP_PROXY="http://10.128.162.33:1080"
+export ALL_PROXY="http://10.128.162.33:1080"
 
 export KUBECONFIG=~/.kube/config:~/.kube/config_stage
 # [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh) # выключил пока, выдает ошибку при старте
