@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # --- Configuration ---
-TARGET_DIR="$HOME/Work/Self/dotfiles"
+TARGET_DIR="$HOME/work/self/dotfiles"
 REPO_URL="https://github.com/dyrkow/dotfiles.git"
 
 # --- Helper Functions ---
