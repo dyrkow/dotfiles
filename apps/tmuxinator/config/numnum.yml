@@ -1,0 +1,27 @@
+# /Users/dyrkov/.config/tmuxinator/numnum.yml
+
+name: numnum
+root: ~/work/numnum
+
+windows:
+  - interior:
+      root: ~/work/numnum/Interior
+      layout: main-vertical
+      panes:
+        - vim
+        - gs
+        - gs
+  - secure:
+      root: ~/work/numnum/secure-service
+      layout: main-vertical
+      panes:
+        - vim
+        - git status
+        - git status
+  - super:
+      root: ~/work/numnum/shop
+      layout: main-vertical
+      panes:
+        - vim
+        - git status
+        - git status

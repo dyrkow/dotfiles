@@ -1,0 +1,11 @@
+# /Users/dyrkov/.config/tmuxinator/salesduck.yml
+
+name: salesduck
+root: ~/work/salesduck
+
+windows:
+  - logger:
+      root: ~/work/salesduck/logger
+      layout: main-vertical
+      panes:
+        - vim

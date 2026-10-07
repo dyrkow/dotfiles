@@ -1,0 +1,19 @@
+# /Users/dyrkov/.config/tmuxinator/self.yml
+
+name: self
+root: ~/work/self
+
+windows:
+  - dotfiles:
+      root: ~/work/self/dotfiles
+      layout: main-vertical
+      panes:
+        - vim
+        - gs
+  - lint:
+      root: ~/work/self/lint
+      layout: main-vertical
+      panes:
+        - vim
+        - gs
+        - gs
