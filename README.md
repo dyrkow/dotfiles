@@ -81,3 +81,5 @@ registry=https://registry.npmjs.org/
 @dooglys:registry=https://gitlab.dooglys.net/api/v4/projects/5/packages/npm/
 //gitlab.dooglys.net/api/v4/projects/5/packages/npm/:_authToken=<TOKEN>
 ```
+
+brew install go
