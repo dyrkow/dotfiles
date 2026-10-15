@@ -1,5 +1,8 @@
 --[[ UI для подключения к БД (PostgreSQL, MongoDB, MySQL, SQLite и др.) ]]--
 -- https://github.com/kristijanhusak/vim-dadbod-ui
+-- mongosh (Node 23) пишет ExperimentalWarning про require(ESM) в stderr,
+-- dadbod сливает stderr в результаты запроса. Гасим warning'и Node.
+vim.env.NODE_NO_WARNINGS = "1"
 vim.g.db_ui_use_nerd_fonts = 1
 vim.g.db_ui_show_help = 0
 vim.g.db_ui_icons = {
