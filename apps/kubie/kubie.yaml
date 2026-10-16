@@ -1,0 +1,7 @@
+configs:
+  include:
+    - ~/.kube/*
+  exclude:
+    - ~/.kube/kubie.yaml
+    - ~/.kube/cache
+    - ~/.kube/http-cache

@@ -66,7 +66,6 @@ export NVM_DIR="$HOME/.nvm"
 # export HTTP_PROXY="http://10.128.162.33:1080"
 # export ALL_PROXY="http://10.128.162.33:1080"
 
-export KUBECONFIG=~/.kube/config:~/.kube/config_stage
 # [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh) # выключил пока, выдает ошибку при старте
 
 # исправление проблемы upgrade react-native
